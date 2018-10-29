@@ -32,28 +32,11 @@ namespace AwesomePokerGameSln {
 
     private void dealCards() {
       deck.shuffleDeck();
-      Tuple<int, int>[] cards = new Tuple<int, int>[5];
-      int index = 0;
-      foreach (PictureBox playerCardPic in playerCardPics) {
-        CardType card = deck.nextCard();
-        //CardType card = new CardType(index, inde);
-        cards[index++] = card;
-        playerCardPic.BackgroundImage = CardImageHelper.cardToBitmap(card);
-      }
-      dealerHand = new Hand(cards);
-      cards = new CardType[5];
-      index = 0;
-      foreach (PictureBox dealerCardPic in dealerCardPics) {
-        CardType card = deck.nextCard();
-        //CardType card = new CardType(index, inde);
-        cards[index++] = card;
-        dealerCardPic.BackgroundImage = CardImageHelper.cardToBitmap(card);
-      }
-      playerHand = new Hand(cards);
-      lblHandType.Text = playerHand.getHandType().ToString();
+      drawHand(playerHand, playerCardPics, lblHandType);
+      drawHand(dealerHand, dealerCardPics, null);
     }
     
-    private void drawHand(Hand hand, PictureBox[] cardPics)
+    private void drawHand(Hand hand, PictureBox[] cardPics, Label label)
     {
         Tuple<int, int>[] cards = new Tuple<int, int>[5];
         int index = 0;
@@ -64,9 +47,9 @@ namespace AwesomePokerGameSln {
             cardPic.BackgroundImage = CardImageHelper.cardToBitmap(card);
         }
         hand = new Hand(cards);
-        if (hand == playerHand)
+        if (label != null)
         {
-            lblHandType.Text = hand.getHandType().ToString();
+            label.Text = hand.getHandType().ToString();
         }
     }
 
