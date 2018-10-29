@@ -17,6 +17,7 @@ namespace AwesomePokerGameSln {
     private PictureBox[] dealerCardPics;
     private Hand playerHand;
     private Hand dealerHand;
+    private bool hasMulliganed = false;
 
     public FrmPlaygame() {
       InitializeComponent();
@@ -31,6 +32,7 @@ namespace AwesomePokerGameSln {
     }
 
     private void dealCards() {
+      hasMulliganed = false;
       deck.shuffleDeck();
       drawHand(playerHand, playerCardPics, lblHandType);
       drawHand(dealerHand, dealerCardPics, null);
@@ -67,9 +69,15 @@ namespace AwesomePokerGameSln {
       dealCards();
     }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
+    private void button2_Click(object sender, EventArgs e)
+    {
+      if (hasMulliganed == false)
+      {
+        hasMulliganed = true;
+        drawHand(playerHand, playerCardPics, lblHandType);
+      }
     }
+  }
+
+    
 }
