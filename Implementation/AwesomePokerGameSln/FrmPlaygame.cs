@@ -52,6 +52,23 @@ namespace AwesomePokerGameSln {
       playerHand = new Hand(cards);
       lblHandType.Text = playerHand.getHandType().ToString();
     }
+    
+    private void drawHand(Hand hand, PictureBox[] cardPics)
+    {
+        Tuple<int, int>[] cards = new Tuple<int, int>[5];
+        int index = 0;
+        foreach (PictureBox cardPic in cardPics)
+        {
+            CardType card = deck.nextCard();
+            cards[index++] = card;
+            cardPic.BackgroundImage = CardImageHelper.cardToBitmap(card);
+        }
+        hand = new Hand(cards);
+        if (hand == playerHand)
+        {
+            lblHandType.Text = hand.getHandType().ToString();
+        }
+    }
 
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
       foreach (Form f in Application.OpenForms)
@@ -66,5 +83,10 @@ namespace AwesomePokerGameSln {
     private void button1_Click(object sender, EventArgs e) {
       dealCards();
     }
-  }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -52,5 +52,6 @@ namespace AwesomePokerGameSln.Code {
       }
       return cards[curCardIndex++];
     }
+
   }
 }
