@@ -49,7 +49,10 @@ namespace AwesomePokerGameSln {
       player.drawFreshHand();
       dealer.drawFreshHand();
     }
-    
+
+    /// <summary>
+    /// Clear card selections and mulligan list.
+    /// </summary>
     private void clearSelections()
     {
       selectedCards = new bool[] { false, false, false, false, false };
@@ -57,8 +60,15 @@ namespace AwesomePokerGameSln {
       {
         picBox.BorderStyle = BorderStyle.None;
       }
+      player.clearMulliganList();
     }
 
+    /// <summary>
+    /// Processes the ccard click.
+    /// Checks if it should be added to mulligan list, removed from mulligan list, or nothing.
+    /// </summary>
+    /// <param name="index">Index of clicked card.</param>
+    /// <param name="picBox"></param>
     private void processCardClick(int index, PictureBox picBox)
     {
       if (hasMulliganed)
@@ -79,12 +89,20 @@ namespace AwesomePokerGameSln {
 
     }
 
+    /// <summary>
+    /// Adds the specified card to the mulligan list.
+    /// </summary>
+    /// <param name="index"></param>
     private void addCardToMulligan(int index)
     {
       player.cardsToMulligan.Add(index);
       selectedCards[index] = true;
     }
 
+    /// <summary>
+    /// Removes the specified cars from the mulligan list.
+    /// </summary>
+    /// <param name="index"></param>
     private void removeCardToMulligan(int index)
     {
       player.cardsToMulligan.Remove(index);
@@ -106,6 +124,12 @@ namespace AwesomePokerGameSln {
       dealCards();
     }
 
+    /// <summary>
+    /// Mulligan Button
+    /// Discards selected cards.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void button2_Click(object sender, EventArgs e)
     {
       if (hasMulliganed == false && player.cardsToMulligan.Count > 0)

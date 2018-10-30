@@ -13,6 +13,9 @@ using CardType = System.Tuple<int, int>;
 namespace AwesomePokerGameSln
 
 {
+  /// <summary>
+  /// This class represents a participant in the poker game. Both teh player an dealer are instances of this class.
+  /// </summary>
   public class Participant
   {
     public Hand hand;
@@ -31,6 +34,11 @@ namespace AwesomePokerGameSln
       this.deck = d;
     }
 
+    /// <summary>
+    /// Discards the cards specified by "cardIndices" and draws new cards to replace them.
+    /// Replaces the appripriate cart images.
+    /// </summary>
+    /// <param name="cardIndices">Indices of cards to replace.</param>
     public void drawCards(int[] cardIndices)
     {
       foreach (int i in cardIndices)
@@ -59,23 +67,40 @@ namespace AwesomePokerGameSln
       }
     }
 
+    /// <summary>
+    /// Discards and replaecs all cards.
+    /// </summary>
     public void drawFreshHand()
     {
       drawCards(new int[] {0,1,2,3,4});
     }
 
+    /// <summary>
+    /// Discards the selected cards and replaces them.
+    /// </summary>
     public void drawMulligan()
     {
       drawCards(cardsToMulligan.ToArray(typeof(int)) as int[]);
       cardsToMulligan = new ArrayList();
     }
 
+    /// <summary>
+    /// Returns whether or not the participant can select more cards to mulligan.
+    /// </summary>
+    /// <returns>Boolean</returns>
     public Boolean canSelectMore()
     {
       return cardsToMulligan.Count < maxMulligan;
     }
 
-    
+    /// <summary>
+    /// Clears the list of cards to mulligan.
+    /// </summary>
+    public void clearMulliganList()
+    {
+      cardsToMulligan = new ArrayList();
+    }
+
   }
 
 }
