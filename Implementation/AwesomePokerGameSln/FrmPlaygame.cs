@@ -1,5 +1,6 @@
 ﻿using AwesomePokerGameSln.Code;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,7 @@ namespace AwesomePokerGameSln {
     private Hand playerHand;
     private Hand dealerHand;
     private bool hasMulliganed = false;
+    private ArrayList cardsToMulligan = new ArrayList();
 
     public FrmPlaygame() {
       InitializeComponent();
@@ -35,6 +37,7 @@ namespace AwesomePokerGameSln {
       hasMulliganed = false;
       deck.shuffleDeck();
       drawHand(playerHand, playerCardPics, lblHandType);
+      // replace "null" with handle for displaying dealer hand type
       drawHand(dealerHand, dealerCardPics, null);
     }
     
@@ -53,6 +56,20 @@ namespace AwesomePokerGameSln {
         {
             label.Text = hand.getHandType().ToString();
         }
+    }
+
+    private void processCardClick(int index)
+    {
+      if (cardsToMulligan.Contains(index))
+      {
+        removeCardToMulligan(index);
+      }
+      
+    }
+
+    private void removeCardToMulligan(int index)
+    {
+
     }
 
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
@@ -76,6 +93,31 @@ namespace AwesomePokerGameSln {
         hasMulliganed = true;
         drawHand(playerHand, playerCardPics, lblHandType);
       }
+    }
+
+    private void picCard5_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    private void picCard4_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void picCard3_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void picCard2_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void picCard1_Click(object sender, EventArgs e)
+    {
+
     }
   }
 

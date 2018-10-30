@@ -106,5 +106,10 @@ namespace AwesomePokerGameSln.Code {
 
       return handType;
     }
+
+    public void changeCard(int index, Tuple<int, int> card)
+    {
+      cards[index] = card;
+    }
   }
 }
