@@ -20,6 +20,8 @@ namespace AwesomePokerGameSln
     public Label handLabel;
     public Deck deck;
     public bool hasAce;
+    private int maxMulligan;
+    public ArrayList cardsToMulligan = new ArrayList();
 
 	  public Participant(PictureBox[] pics, Label label, Deck d)
 	  {
@@ -42,11 +44,13 @@ namespace AwesomePokerGameSln
         if (card.Item1 == 12)
         {
           hasAce = true;
+          maxMulligan = 4;
           break;
         }
         else
         {
           hasAce = false;
+          maxMulligan = 3;
         }
       }
       if (handLabel != null)
@@ -59,6 +63,19 @@ namespace AwesomePokerGameSln
     {
       drawCards(new int[] {0,1,2,3,4});
     }
+
+    public void drawMulligan()
+    {
+      drawCards(cardsToMulligan.ToArray(typeof(int)) as int[]);
+      cardsToMulligan = new ArrayList();
+    }
+
+    public Boolean canSelectMore()
+    {
+      return cardsToMulligan.Count < maxMulligan;
+    }
+
+    
   }
 
 }

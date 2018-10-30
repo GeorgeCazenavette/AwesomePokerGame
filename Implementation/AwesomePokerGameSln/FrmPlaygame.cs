@@ -22,6 +22,7 @@ namespace AwesomePokerGameSln {
     private Hand dealerHand;
     private bool hasMulliganed = false;
     private ArrayList cardsToMulligan = new ArrayList();
+    private bool[] selectedCards = { false, false, false, false, false };
 
     public FrmPlaygame() {
       InitializeComponent();
@@ -50,17 +51,29 @@ namespace AwesomePokerGameSln {
 
     private void processCardClick(int index)
     {
-      if (cardsToMulligan.Contains(index))
+      if (selectedCards[index])
       {
         removeCardToMulligan(index);
+        return;
+      }
+      else if (player.canSelectMore())
+      {
+        addCardToMulligan(index);
       }
       
     }
 
+    private void addCardToMulligan(int index)
+    {
+      player.cardsToMulligan.Add(index);
+    }
+
     private void removeCardToMulligan(int index)
     {
-
+      player.cardsToMulligan.Remove(index);
     }
+
+
 
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
       foreach (Form f in Application.OpenForms)
@@ -81,33 +94,33 @@ namespace AwesomePokerGameSln {
       {
         hasMulliganed = true;
         // placeholder param
-        player.drawCards(new int[] { 0, 1, 2, 3, 4 });
+        player.drawMulligan();
       }
     }
 
     private void picCard5_Click(object sender, EventArgs e)
     {
-      
+      processCardClick(4);
     }
 
     private void picCard4_Click(object sender, EventArgs e)
     {
-
+      processCardClick(3);
     }
 
     private void picCard3_Click(object sender, EventArgs e)
     {
-
+      processCardClick(2);
     }
 
     private void picCard2_Click(object sender, EventArgs e)
     {
-
+      processCardClick(1);
     }
 
     private void picCard1_Click(object sender, EventArgs e)
     {
-
+      processCardClick(0);
     }
   }
 
