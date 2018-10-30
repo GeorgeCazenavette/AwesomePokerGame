@@ -16,6 +16,8 @@ namespace AwesomePokerGameSln {
     private Deck deck;
     private PictureBox[] playerCardPics;
     private PictureBox[] dealerCardPics;
+    private Participant player;
+    private Participant dealer;
     private Hand playerHand;
     private Hand dealerHand;
     private bool hasMulliganed = false;
@@ -23,6 +25,7 @@ namespace AwesomePokerGameSln {
 
     public FrmPlaygame() {
       InitializeComponent();
+      deck = new Deck();
       playerCardPics = new PictureBox[5];
       for (int c = 1; c <= 5; c++) {
         playerCardPics[c - 1] = this.Controls.Find("picCard" + c.ToString(), true)[0] as PictureBox;
@@ -31,32 +34,19 @@ namespace AwesomePokerGameSln {
       for (int c = 1; c <= 5; c++) {
         dealerCardPics[c - 1] = this.Controls.Find("pictureBox" + c.ToString(), true)[0] as PictureBox;
       }
+
+      player = new Participant(playerCardPics, lblHandType, deck);
+      // replace "null" with handle for displaying dealer hand type
+      dealer = new Participant(dealerCardPics, null, deck);
     }
 
     private void dealCards() {
       hasMulliganed = false;
       deck.shuffleDeck();
-      drawHand(playerHand, playerCardPics, lblHandType);
-      // replace "null" with handle for displaying dealer hand type
-      drawHand(dealerHand, dealerCardPics, null);
+      player.drawFreshHand();
+      dealer.drawFreshHand();
     }
     
-    private void drawHand(Hand hand, PictureBox[] cardPics, Label label)
-    {
-        Tuple<int, int>[] cards = new Tuple<int, int>[5];
-        int index = 0;
-        foreach (PictureBox cardPic in cardPics)
-        {
-            CardType card = deck.nextCard();
-            cards[index++] = card;
-            cardPic.BackgroundImage = CardImageHelper.cardToBitmap(card);
-        }
-        hand = new Hand(cards);
-        if (label != null)
-        {
-            label.Text = hand.getHandType().ToString();
-        }
-    }
 
     private void processCardClick(int index)
     {
@@ -78,7 +68,6 @@ namespace AwesomePokerGameSln {
     }
 
     private void FrmPlaygame_Load(object sender, EventArgs e) {
-      deck = new Deck();
       dealCards();
     }
 
@@ -91,7 +80,8 @@ namespace AwesomePokerGameSln {
       if (hasMulliganed == false)
       {
         hasMulliganed = true;
-        drawHand(playerHand, playerCardPics, lblHandType);
+        // placeholder param
+        player.drawCards(new int[] { 0, 1, 2, 3, 4 });
       }
     }
 

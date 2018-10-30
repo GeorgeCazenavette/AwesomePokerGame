@@ -18,19 +18,46 @@ namespace AwesomePokerGameSln
     public Hand hand;
     public PictureBox[] cardPics;
     public Label handLabel;
-	  public Participant()
+    public Deck deck;
+    public bool hasAce;
+
+	  public Participant(PictureBox[] pics, Label label, Deck d)
 	  {
-      Hand = new Hand(new Tuple<int, int>[5]);
+      hand = new Hand(new Tuple<int, int>[5]);
+      this.cardPics = pics;
+      this.handLabel = label;
+      this.deck = d;
     }
 
-    public void drawHand(Deck d, int[] cardIndices)
+    public void drawCards(int[] cardIndices)
     {
       foreach (int i in cardIndices)
       {
-        CardType card = d.nextCard();
-        hand[i] = card;
+        CardType card = deck.nextCard();
+        hand.changeCard(i, card);
         cardPics[i].BackgroundImage = CardImageHelper.cardToBitmap(card);
       }
+      foreach (CardType card in hand.getCards())
+      {
+        if (card.Item1 == 12)
+        {
+          hasAce = true;
+          break;
+        }
+        else
+        {
+          hasAce = false;
+        }
+      }
+      if (handLabel != null)
+      {
+        handLabel.Text = hand.getHandType().ToString();
+      }
+    }
+
+    public void drawFreshHand()
+    {
+      drawCards(new int[] {0,1,2,3,4});
     }
   }
 

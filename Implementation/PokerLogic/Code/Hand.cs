@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CardType = System.Tuple<int, int>;
 
 namespace AwesomePokerGameSln.Code {
   public enum HandType {
@@ -110,6 +111,11 @@ namespace AwesomePokerGameSln.Code {
     public void changeCard(int index, Tuple<int, int> card)
     {
       cards[index] = card;
+    }
+
+    public CardType[] getCards()
+    {
+      return cards;
     }
   }
 }
