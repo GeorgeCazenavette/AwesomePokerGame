@@ -108,7 +108,7 @@ namespace AwesomePokerGameSln {
 
     private void button2_Click(object sender, EventArgs e)
     {
-      if (hasMulliganed == false)
+      if (hasMulliganed == false && player.cardsToMulligan.Count > 0)
       {
         hasMulliganed = true;
         // placeholder param
