@@ -43,34 +43,52 @@ namespace AwesomePokerGameSln {
 
     private void dealCards() {
       hasMulliganed = false;
+      clearSelections();
+      button2.Enabled = true;
       deck.shuffleDeck();
       player.drawFreshHand();
       dealer.drawFreshHand();
     }
     
-
-    private void processCardClick(int index)
+    private void clearSelections()
     {
-      if (selectedCards[index])
+      selectedCards = new bool[] { false, false, false, false, false };
+      foreach (PictureBox picBox in playerCardPics)
+      {
+        picBox.BorderStyle = BorderStyle.None;
+      }
+    }
+
+    private void processCardClick(int index, PictureBox picBox)
+    {
+      if (hasMulliganed)
+      {
+        return;
+      }
+      else if (selectedCards[index])
       {
         removeCardToMulligan(index);
+        picBox.BorderStyle = BorderStyle.None;
         return;
       }
       else if (player.canSelectMore())
       {
         addCardToMulligan(index);
+        picBox.BorderStyle = BorderStyle.Fixed3D;
       }
-      
+
     }
 
     private void addCardToMulligan(int index)
     {
       player.cardsToMulligan.Add(index);
+      selectedCards[index] = true;
     }
 
     private void removeCardToMulligan(int index)
     {
       player.cardsToMulligan.Remove(index);
+      selectedCards[index] = false;
     }
 
 
@@ -95,32 +113,34 @@ namespace AwesomePokerGameSln {
         hasMulliganed = true;
         // placeholder param
         player.drawMulligan();
+        clearSelections();
+        button2.Enabled = false;
       }
     }
 
     private void picCard5_Click(object sender, EventArgs e)
     {
-      processCardClick(4);
+      processCardClick(4, (PictureBox)(sender));
     }
 
     private void picCard4_Click(object sender, EventArgs e)
     {
-      processCardClick(3);
+      processCardClick(3, (PictureBox)(sender));
     }
 
     private void picCard3_Click(object sender, EventArgs e)
     {
-      processCardClick(2);
+      processCardClick(2, (PictureBox)(sender));
     }
 
     private void picCard2_Click(object sender, EventArgs e)
     {
-      processCardClick(1);
+      processCardClick(1, (PictureBox)(sender));
     }
 
     private void picCard1_Click(object sender, EventArgs e)
     {
-      processCardClick(0);
+      processCardClick(0, (PictureBox)(sender));
     }
   }
 
