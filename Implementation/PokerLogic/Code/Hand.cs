@@ -108,11 +108,20 @@ namespace AwesomePokerGameSln.Code {
       return handType;
     }
 
+    /// <summary>
+    /// Allows the exchanging changing of one card in the hand.
+    /// </summary>
+    /// <param name="index">index of card to swap</param>
+    /// <param name="card">card to insert</param>
     public void changeCard(int index, Tuple<int, int> card)
     {
       cards[index] = card;
     }
 
+    /// <summary>
+    /// Returns the list of cards in the hand.
+    /// </summary>
+    /// <returns>array of cards</returns>
     public CardType[] getCards()
     {
       return cards;
