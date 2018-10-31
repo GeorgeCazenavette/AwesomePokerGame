@@ -41,6 +41,11 @@ namespace AwesomePokerGameSln {
       dealer = new Participant(dealerCardPics, null, deck);
     }
 
+    /// <summary>
+    /// Deals cards and resets mulligan mechanic.
+    /// Shuffles deck and gives the player and dealer new hands.
+    /// Resets mulligan button.
+    /// </summary>
     private void dealCards() {
       hasMulliganed = false;
       clearSelections();
