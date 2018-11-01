@@ -114,7 +114,28 @@ namespace AwesomePokerGameSln {
       selectedCards[index] = false;
     }
 
+    /// <summary>
+    /// Wrapper for pressing mulligan button
+    /// </summary>
+    private void mulliganButtonClick()
+    {
+      if (hasMulliganed == false && player.cardsToMulligan.Count > 0)
+      {
+        hasMulliganed = true;
+        // placeholder param
+        player.drawMulligan();
+        clearSelections();
+        button2.Enabled = false;
+      }
+    }
 
+    /// <summary>
+    /// Wrapper for pressing redeal button
+    /// </summary>
+    private void redealButtonClick()
+    {
+      dealCards();
+    }
 
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
       foreach (Form f in Application.OpenForms)
@@ -126,7 +147,7 @@ namespace AwesomePokerGameSln {
     }
 
     private void button1_Click(object sender, EventArgs e) {
-      dealCards();
+      redealButtonClick();
     }
 
     /// <summary>
@@ -137,15 +158,9 @@ namespace AwesomePokerGameSln {
     /// <param name="e"></param>
     private void button2_Click(object sender, EventArgs e)
     {
-      if (hasMulliganed == false && player.cardsToMulligan.Count > 0)
-      {
-        hasMulliganed = true;
-        // placeholder param
-        player.drawMulligan();
-        clearSelections();
-        button2.Enabled = false;
-      }
+      mulliganButtonClick();
     }
+
 
     private void picCard5_Click(object sender, EventArgs e)
     {
@@ -172,30 +187,29 @@ namespace AwesomePokerGameSln {
       processCardClick(0, (PictureBox)(sender));
     }
 
+    /// <summary>
+    /// Handles hotkeys
+    /// </summary>
+    /// <param name="msg"></param>
+    /// <param name="keyData"></param>
+    /// <returns></returns>
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-        switch (keyData)
-        {
-            case (Keys.Shift | Keys.M):
-                if (hasMulliganed == false && player.cardsToMulligan.Count > 0)
-                {
-                    hasMulliganed = true;
-                    // placeholder param
-                    player.drawMulligan();
-                    clearSelections();
-                    button2.Enabled = false;
-                }
-                return true;
+      switch (keyData)
+      {
+        case (Keys.Shift | Keys.M):
+          mulliganButtonClick();
+          return true;
 
-            case (Keys.Shift | Keys.D):
-                dealCards();
-                return true;
+        case (Keys.Shift | Keys.D):
+          redealButtonClick();
+          return true;
 
-            default:
-                return base.ProcessCmdKey(ref msg, keyData);
-        }
-        }
+        default:
+          return base.ProcessCmdKey(ref msg, keyData);
+      }
     }
+  }
 
 
     
