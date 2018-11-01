@@ -171,7 +171,32 @@ namespace AwesomePokerGameSln {
     {
       processCardClick(0, (PictureBox)(sender));
     }
-  }
+
+    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+    {
+        switch (keyData)
+        {
+            case (Keys.Shift | Keys.M):
+                if (hasMulliganed == false && player.cardsToMulligan.Count > 0)
+                {
+                    hasMulliganed = true;
+                    // placeholder param
+                    player.drawMulligan();
+                    clearSelections();
+                    button2.Enabled = false;
+                }
+                return true;
+
+            case (Keys.Shift | Keys.D):
+                dealCards();
+                return true;
+
+            default:
+                return base.ProcessCmdKey(ref msg, keyData);
+        }
+        }
+    }
+
 
     
 }
