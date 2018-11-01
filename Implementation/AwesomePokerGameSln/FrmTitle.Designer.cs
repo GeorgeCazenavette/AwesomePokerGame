@@ -29,6 +29,7 @@
             this.btnQuit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.picRulebook = new System.Windows.Forms.PictureBox();
+            this.gamblingHelpLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picRulebook)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             // 
             this.btnNewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewGame.Location = new System.Drawing.Point(57, 469);
+            this.btnNewGame.Location = new System.Drawing.Point(48, 430);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(211, 87);
             this.btnNewGame.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             this.btnViewRuleBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnViewRuleBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewRuleBook.Location = new System.Drawing.Point(374, 469);
+            this.btnViewRuleBook.Location = new System.Drawing.Point(365, 430);
             this.btnViewRuleBook.Name = "btnViewRuleBook";
             this.btnViewRuleBook.Size = new System.Drawing.Size(238, 87);
             this.btnViewRuleBook.TabIndex = 2;
@@ -72,7 +73,7 @@
             // 
             this.btnQuit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuit.Location = new System.Drawing.Point(713, 469);
+            this.btnQuit.Location = new System.Drawing.Point(704, 430);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(211, 87);
             this.btnQuit.TabIndex = 3;
@@ -96,12 +97,26 @@
             // 
             this.picRulebook.BackgroundImage = global::AwesomePokerGameSln.Properties.Resources.rule_book;
             this.picRulebook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picRulebook.Location = new System.Drawing.Point(229, 114);
+            this.picRulebook.Location = new System.Drawing.Point(220, 75);
             this.picRulebook.Name = "picRulebook";
             this.picRulebook.Size = new System.Drawing.Size(505, 311);
             this.picRulebook.TabIndex = 5;
             this.picRulebook.TabStop = false;
             this.picRulebook.Visible = false;
+            // 
+            // gamblingHelpLbl
+            // 
+            this.gamblingHelpLbl.AutoSize = true;
+            this.gamblingHelpLbl.BackColor = System.Drawing.Color.Transparent;
+            this.gamblingHelpLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gamblingHelpLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.gamblingHelpLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.gamblingHelpLbl.Location = new System.Drawing.Point(527, 534);
+            this.gamblingHelpLbl.Name = "gamblingHelpLbl";
+            this.gamblingHelpLbl.Size = new System.Drawing.Size(411, 17);
+            this.gamblingHelpLbl.TabIndex = 6;
+            this.gamblingHelpLbl.Text = "Gambling Addition? Click or call 1-800-GAMBLER for more help.";
+            this.gamblingHelpLbl.Click += new System.EventHandler(this.label3_Click);
             // 
             // FrmTitle
             // 
@@ -111,6 +126,7 @@
             this.BackgroundImage = global::AwesomePokerGameSln.Properties.Resources.title_screen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(950, 560);
+            this.Controls.Add(this.gamblingHelpLbl);
             this.Controls.Add(this.picRulebook);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnQuit);
@@ -133,6 +149,7 @@
     private System.Windows.Forms.Button btnQuit;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.PictureBox picRulebook;
-  }
+        private System.Windows.Forms.Label gamblingHelpLbl;
+    }
 }
 

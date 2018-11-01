@@ -28,5 +28,9 @@ namespace AwesomePokerGameSln {
       frmPlaygame.Show();
       Hide();
     }
+
+    private void label3_Click(object sender, EventArgs e) {
+      System.Diagnostics.Process.Start("https://www.ncpgambling.org/");
+    }
   }
 }
