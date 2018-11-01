@@ -25,6 +25,7 @@ namespace AwesomePokerGameSln
     public bool hasAce;
     private int maxMulligan;
     public ArrayList cardsToMulligan = new ArrayList();
+    public int money;
 
 	  public Participant(PictureBox[] pics, Label label, Deck d)
 	  {
@@ -32,6 +33,7 @@ namespace AwesomePokerGameSln
       this.cardPics = pics;
       this.handLabel = label;
       this.deck = d;
+      this.money = 0;
     }
 
     /// <summary>
