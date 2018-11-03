@@ -39,6 +39,7 @@ namespace AwesomePokerGameSln {
       player = new Participant(playerCardPics, lblHandType, deck);
       // replace "null" with handle for displaying dealer hand type
       dealer = new Participant(dealerCardPics, null, deck);
+    dealer.showHand = false;
     }
 
 
@@ -130,7 +131,7 @@ namespace AwesomePokerGameSln {
         button2.Enabled = false;
       }
     }
-
+        
     /// <summary>
     /// Wrapper for pressing redeal button
     /// </summary>

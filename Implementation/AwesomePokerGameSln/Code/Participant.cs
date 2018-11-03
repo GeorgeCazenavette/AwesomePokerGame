@@ -26,9 +26,10 @@ namespace AwesomePokerGameSln
     private int maxMulligan;
     public ArrayList cardsToMulligan = new ArrayList();
     public int money;
+    public bool showHand = true;
 
-	  public Participant(PictureBox[] pics, Label label, Deck d)
-	  {
+	public Participant(PictureBox[] pics, Label label, Deck d)
+	{
       hand = new Hand(new Tuple<int, int>[5]);
       this.cardPics = pics;
       this.handLabel = label;
@@ -47,8 +48,11 @@ namespace AwesomePokerGameSln
       {
         CardType card = deck.nextCard();
         hand.changeCard(i, card);
-        cardPics[i].BackgroundImage = CardImageHelper.cardToBitmap(card);
-      }
+        if (this.showHand)
+          cardPics[i].BackgroundImage = CardImageHelper.cardToBitmap(card);
+        else
+          cardPics[i].BackgroundImage = CardImageHelper.cardBackToBitmap();
+    }
       foreach (CardType card in hand.getCards())
       {
         if (card.Item1 == 12)
