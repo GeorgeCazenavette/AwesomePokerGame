@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,9 @@ namespace AwesomePokerGameSln {
 
     public FrmPlaygame() {
       InitializeComponent();
+
+      InitializeBackgroundMusic();
+      
       deck = new Deck();
       playerCardPics = new PictureBox[5];
       for (int c = 1; c <= 5; c++) {
@@ -40,6 +44,17 @@ namespace AwesomePokerGameSln {
       // replace "null" with handle for displaying dealer hand type
       dealer = new Participant(dealerCardPics, null, deck, false);
     dealer.showHand = false;
+    }
+
+
+    private void InitializeBackgroundMusic()
+    {
+      System.IO.Stream str = Properties.Resources.background_music;
+      System.Media.SoundPlayer sp = new System.Media.SoundPlayer(str);
+      ////we want the music to loop
+      ////sp.Play();
+      sp.PlayLooping();
+      
     }
 
 
