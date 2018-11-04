@@ -36,9 +36,9 @@ namespace AwesomePokerGameSln {
         dealerCardPics[c - 1] = this.Controls.Find("pictureBox" + c.ToString(), true)[0] as PictureBox;
       }
 
-      player = new Participant(playerCardPics, lblHandType, deck);
+      player = new Participant(playerCardPics, lblHandType, deck, true);
       // replace "null" with handle for displaying dealer hand type
-      dealer = new Participant(dealerCardPics, null, deck);
+      dealer = new Participant(dealerCardPics, null, deck, false);
     dealer.showHand = false;
     }
 
