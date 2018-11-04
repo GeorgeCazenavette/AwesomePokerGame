@@ -5,9 +5,11 @@ using System.Windows.Forms;
 
 namespace AwesomePokerGameSln {
   public partial class FrmTitle : Form {
+    public SoundHelper Sound_Helper;
+
     public FrmTitle() {
       InitializeComponent();
-      SoundHelper Sound_Helper = new SoundHelper();
+      Sound_Helper = new SoundHelper();
     }
 
     private void btnQuit_Click(object sender, EventArgs e) {
@@ -34,5 +36,20 @@ namespace AwesomePokerGameSln {
     private void label3_Click(object sender, EventArgs e) {
       System.Diagnostics.Process.Start("https://www.ncpgambling.org/");
     }
+
+
+    /// <summary>
+    /// Handles KeyDown Events within FrmTitle
+    /// </summary>
+    private void FrmTitle_KeyDown(object sender, KeyEventArgs e)
+    {
+      //M stands for mute
+      if (e.KeyCode == Keys.M)
+      {
+        Sound_Helper.mute_unmute();
+      }
+    }
+
+    
   }
 }
