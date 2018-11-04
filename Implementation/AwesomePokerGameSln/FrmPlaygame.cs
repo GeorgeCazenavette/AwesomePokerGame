@@ -50,10 +50,10 @@ namespace AwesomePokerGameSln {
     private void InitializeBackgroundMusic()
     {
       System.IO.Stream str = Properties.Resources.background_music;
-      //System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"D:\medias\Startup.wav");
+      System.Media.SoundPlayer sp = new System.Media.SoundPlayer(str);
       ////we want the music to loop
       ////sp.Play();
-      //sp.PlayLooping();
+      sp.PlayLooping();
       
     }
 

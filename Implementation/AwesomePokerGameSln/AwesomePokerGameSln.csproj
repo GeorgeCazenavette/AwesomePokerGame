@@ -299,7 +299,7 @@
     <None Include="Resources\card back.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\background_music.mp3" />
+    <None Include="Resources\background_music.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
