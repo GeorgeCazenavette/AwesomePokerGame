@@ -50,9 +50,11 @@ namespace AwesomePokerGameSln {
     /// Resets mulligan button.
     /// </summary>
     private void dealCards() {
+      dealer.showHand = false;
       hasMulliganed = false;
       clearSelections();
       button2.Enabled = true;
+      button3.Enabled = true;
       deck.shuffleDeck();
       player.drawFreshHand();
       dealer.drawFreshHand();
@@ -140,6 +142,13 @@ namespace AwesomePokerGameSln {
       dealCards();
     }
 
+    private void revealButtonClick()
+    {
+      button2.Enabled = false;
+      button3.Enabled = false;
+      dealer.showCards();
+    }
+
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
       foreach (Form f in Application.OpenForms)
         f.Close();
@@ -164,6 +173,10 @@ namespace AwesomePokerGameSln {
       mulliganButtonClick();
     }
 
+    private void button3_Click(object sender, EventArgs e)
+    {
+      revealButtonClick();
+    }
 
     private void picCard5_Click(object sender, EventArgs e)
     {
@@ -212,6 +225,7 @@ namespace AwesomePokerGameSln {
           return base.ProcessCmdKey(ref msg, keyData);
       }
     }
+
   }
 
 
