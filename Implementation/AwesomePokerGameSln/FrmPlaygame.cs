@@ -28,7 +28,7 @@ namespace AwesomePokerGameSln {
     public FrmPlaygame() {
       InitializeComponent();
 
-      InitializeBackgroundMusic();
+      //InitializeBackgroundMusic();
       
       deck = new Deck();
       playerCardPics = new PictureBox[5];
@@ -47,15 +47,15 @@ namespace AwesomePokerGameSln {
     }
 
 
-    private void InitializeBackgroundMusic()
-    {
-      System.IO.Stream str = Properties.Resources.background_music;
-      System.Media.SoundPlayer sp = new System.Media.SoundPlayer(str);
-      ////we want the music to loop
-      ////sp.Play();
-      sp.PlayLooping();
+    //private void InitializeBackgroundMusic()
+    //{
+    //  System.IO.Stream str = Properties.Resources.background_music;
+    //  System.Media.SoundPlayer sp = new System.Media.SoundPlayer(str);
+    //  ////we want the music to loop
+    //  ////sp.Play();
+    //  sp.PlayLooping();
       
-    }
+    //}
 
 
 

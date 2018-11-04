@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Code\CardImageHelper.cs" />
     <Compile Include="Code\Participant.cs" />
+    <Compile Include="Code\SoundHelper.cs" />
     <Compile Include="FrmPlaygame.cs">
       <SubType>Form</SubType>
     </Compile>

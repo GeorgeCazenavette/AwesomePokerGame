@@ -1,4 +1,5 @@
-﻿using AwesomePokerGameSln.Properties;
+﻿using AwesomePokerGameSln.Code;
+using AwesomePokerGameSln.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -6,6 +7,7 @@ namespace AwesomePokerGameSln {
   public partial class FrmTitle : Form {
     public FrmTitle() {
       InitializeComponent();
+      SoundHelper Sound_Helper = new SoundHelper();
     }
 
     private void btnQuit_Click(object sender, EventArgs e) {
