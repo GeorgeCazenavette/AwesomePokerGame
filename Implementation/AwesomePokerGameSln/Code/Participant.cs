@@ -28,13 +28,14 @@ namespace AwesomePokerGameSln
     public int money;
     public bool showHand = true;
 
-	public Participant(PictureBox[] pics, Label label, Deck d)
+	public Participant(PictureBox[] pics, Label label, Deck d, bool show)
 	{
       hand = new Hand(new Tuple<int, int>[5]);
       this.cardPics = pics;
       this.handLabel = label;
       this.deck = d;
       this.money = 0;
+      this.showHand = show;
     }
 
     /// <summary>
@@ -48,11 +49,7 @@ namespace AwesomePokerGameSln
       {
         CardType card = deck.nextCard();
         hand.changeCard(i, card);
-        if (this.showHand)
-          cardPics[i].BackgroundImage = CardImageHelper.cardToBitmap(card);
-        else
-          cardPics[i].BackgroundImage = CardImageHelper.cardBackToBitmap();
-    }
+      }
       foreach (CardType card in hand.getCards())
       {
         if (card.Item1 == 12)
@@ -71,6 +68,42 @@ namespace AwesomePokerGameSln
       {
         handLabel.Text = hand.getHandType().ToString();
       }
+      if (showHand)
+      {
+        showCards();
+      }
+      else
+      {
+        hideCards();
+      }
+    }
+
+    /// <summary>
+    /// Shows all of participants cards
+    /// </summary>
+    public void showCards()
+    {
+      CardType[] cards = hand.getCards();
+      for (int i = 0; i < cards.Length; i++)
+      {
+        cardPics[i].BackgroundImage = CardImageHelper.cardToBitmap(cards[i]);
+      }
+      showHand = true;
+      handLabel.Visible = true;
+    }
+
+    /// <summary>
+    /// Hides all of participants cards
+    /// </summary>
+    public void hideCards()
+    {
+      CardType[] cards = hand.getCards();
+      for (int i = 0; i < cards.Length; i++)
+      {
+        cardPics[i].BackgroundImage = CardImageHelper.cardBackToBitmap();
+      }
+      showHand = false;
+      handLabel.Visible = false;
     }
 
     /// <summary>
