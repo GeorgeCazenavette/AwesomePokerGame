@@ -37,6 +37,7 @@
       this.pictureBox5 = new System.Windows.Forms.PictureBox();
       this.button2 = new System.Windows.Forms.Button();
       this.button3 = new System.Windows.Forms.Button();
+      this.dealerHandLabel = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.picCard1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard3)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard4)).BeginInit();
@@ -113,7 +114,7 @@
       // 
       this.lblHandType.AutoSize = true;
       this.lblHandType.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblHandType.Location = new System.Drawing.Point(428, 345);
+      this.lblHandType.Location = new System.Drawing.Point(725, 246);
       this.lblHandType.Name = "lblHandType";
       this.lblHandType.Size = new System.Drawing.Size(99, 33);
       this.lblHandType.TabIndex = 7;
@@ -176,7 +177,7 @@
       // 
       // button3
       // 
-      this.button3.Location = new System.Drawing.Point(608, 345);
+      this.button3.Location = new System.Drawing.Point(463, 345);
       this.button3.Name = "button3";
       this.button3.Size = new System.Drawing.Size(156, 86);
       this.button3.TabIndex = 14;
@@ -184,11 +185,22 @@
       this.button3.UseVisualStyleBackColor = true;
       this.button3.Click += new System.EventHandler(this.button3_Click);
       // 
+      // dealerHandLabel
+      // 
+      this.dealerHandLabel.AutoSize = true;
+      this.dealerHandLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.dealerHandLabel.Location = new System.Drawing.Point(725, 73);
+      this.dealerHandLabel.Name = "dealerHandLabel";
+      this.dealerHandLabel.Size = new System.Drawing.Size(99, 33);
+      this.dealerHandLabel.TabIndex = 15;
+      this.dealerHandLabel.Text = "label2";
+      // 
       // FrmPlaygame
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(800, 450);
+      this.ClientSize = new System.Drawing.Size(1023, 450);
+      this.Controls.Add(this.dealerHandLabel);
       this.Controls.Add(this.button3);
       this.Controls.Add(this.button2);
       this.Controls.Add(this.pictureBox1);
@@ -238,5 +250,6 @@
     private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button button2;
     private System.Windows.Forms.Button button3;
+    private System.Windows.Forms.Label dealerHandLabel;
   }
 }

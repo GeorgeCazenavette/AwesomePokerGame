@@ -41,8 +41,7 @@ namespace AwesomePokerGameSln {
       }
 
       player = new Participant(playerCardPics, lblHandType, deck, true);
-      // replace "null" with handle for displaying dealer hand type
-      dealer = new Participant(dealerCardPics, null, deck, false);
+      dealer = new Participant(dealerCardPics, dealerHandLabel, deck, false);
     dealer.showHand = false;
     }
 

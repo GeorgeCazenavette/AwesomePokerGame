@@ -89,6 +89,7 @@ namespace AwesomePokerGameSln
         cardPics[i].BackgroundImage = CardImageHelper.cardToBitmap(cards[i]);
       }
       showHand = true;
+      handLabel.Visible = true;
     }
 
     /// <summary>
@@ -102,6 +103,7 @@ namespace AwesomePokerGameSln
         cardPics[i].BackgroundImage = CardImageHelper.cardBackToBitmap();
       }
       showHand = false;
+      handLabel.Visible = false;
     }
 
     /// <summary>
