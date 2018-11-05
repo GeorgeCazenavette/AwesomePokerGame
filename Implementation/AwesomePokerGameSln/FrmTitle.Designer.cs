@@ -32,6 +32,7 @@
             this.gamblingHelpLbl = new System.Windows.Forms.Label();
             this.buttonSettings = new System.Windows.Forms.Button();
             this.userNameTitleLabel = new System.Windows.Forms.Label();
+            this.userNameBoxTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picRulebook)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,12 +103,13 @@
             this.picRulebook.BackgroundImage = global::AwesomePokerGameSln.Properties.Resources.rule_book;
             this.picRulebook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picRulebook.Location = new System.Drawing.Point(293, 92);
-            this.picRulebook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picRulebook.Margin = new System.Windows.Forms.Padding(4);
             this.picRulebook.Name = "picRulebook";
             this.picRulebook.Size = new System.Drawing.Size(673, 383);
             this.picRulebook.TabIndex = 5;
             this.picRulebook.TabStop = false;
             this.picRulebook.Visible = false;
+            this.picRulebook.Click += new System.EventHandler(this.picRulebook_Click);
             // 
             // gamblingHelpLbl
             // 
@@ -135,16 +137,29 @@
             this.buttonSettings.Text = "Settings";
             this.buttonSettings.UseVisualStyleBackColor = false;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
+            // 
             // userNameTitleLabel
             // 
             this.userNameTitleLabel.AutoSize = true;
             this.userNameTitleLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.userNameTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.userNameTitleLabel.Location = new System.Drawing.Point(1032, 29);
+            this.userNameTitleLabel.Location = new System.Drawing.Point(0, 0);
             this.userNameTitleLabel.Name = "userNameTitleLabel";
             this.userNameTitleLabel.Size = new System.Drawing.Size(103, 39);
             this.userNameTitleLabel.TabIndex = 7;
             this.userNameTitleLabel.Text = "Blank";
+            // 
+            // userNameBoxTitle
+            // 
+            this.userNameBoxTitle.AutoSize = true;
+            this.userNameBoxTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.userNameBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.userNameBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.userNameBoxTitle.Location = new System.Drawing.Point(14, 366);
+            this.userNameBoxTitle.Name = "userNameBoxTitle";
+            this.userNameBoxTitle.Size = new System.Drawing.Size(92, 38);
+            this.userNameBoxTitle.TabIndex = 8;
+            this.userNameBoxTitle.Text = "Blank";
             // 
             // FrmTitle
             // 
@@ -154,6 +169,7 @@
             this.BackgroundImage = global::AwesomePokerGameSln.Properties.Resources.title_screen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(950, 560);
+            this.Controls.Add(this.userNameBoxTitle);
             this.Controls.Add(this.buttonSettings);
             this.Controls.Add(this.gamblingHelpLbl);
             this.Controls.Add(this.picRulebook);
@@ -185,7 +201,7 @@
         private System.Windows.Forms.Button buttonSettings;
 
         private System.Windows.Forms.Label userNameTitleLabel;
-
+        private System.Windows.Forms.Label userNameBoxTitle;
     }
 }
 

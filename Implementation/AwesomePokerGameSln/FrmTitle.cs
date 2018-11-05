@@ -5,19 +5,13 @@ using System.Windows.Forms;
 
 namespace AwesomePokerGameSln {
   public partial class FrmTitle : Form {
-<<<<<<< Updated upstream
     //first initialization of the singleton so it actually creates it
     public SoundHelper Sound_Helper = new SoundHelper();
 
-    public FrmTitle() {
-      InitializeComponent();
-      //Sound_Helper = new SoundHelper();
-      
-=======
     public FrmTitle(string userName) {
       InitializeComponent();
-      userNameTitleLabel.Text = userName;
->>>>>>> Stashed changes
+      //Sound_Helper = new SoundHelper();
+      userNameBoxTitle.Text = "Hi, " + userName;
     }
 
     private void btnQuit_Click(object sender, EventArgs e) {
@@ -45,7 +39,7 @@ namespace AwesomePokerGameSln {
       System.Diagnostics.Process.Start("https://www.ncpgambling.org/");
     }
 
-<<<<<<< Updated upstream
+
 
     /// <summary>
     /// Handles KeyDown Events within FrmTitle
@@ -66,8 +60,11 @@ namespace AwesomePokerGameSln {
             frmSettings.Show();
             Hide();
         }
+
+        private void picRulebook_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-=======
-  }
->>>>>>> Stashed changes
+
 }

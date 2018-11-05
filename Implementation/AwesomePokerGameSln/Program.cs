@@ -14,7 +14,6 @@ namespace AwesomePokerGameSln {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       Application.Run(new FrmUserName());
-      //Application.Run(new FrmTitle());
 
         }
 
