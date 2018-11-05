@@ -302,5 +302,8 @@
   <ItemGroup>
     <None Include="Resources\background_music.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\shuffling-cards-1.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

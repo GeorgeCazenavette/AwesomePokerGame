@@ -9,11 +9,17 @@ namespace AwesomePokerGameSln.Code
 {
   public class SoundHelper
   {
+    //makes it easy to add sound effects
+    public enum sound_effects
+    {
+      shuffle
+    }
+
     //singleton
     private static SoundHelper instance = null;
     private SoundPlayer bgSoundPlayer;
+    private SoundPlayer effectSoundPlayer;
     private bool muted;
-    //private SoundPlayer effectSoundPlayer;
 
     //singleton lazy initialization
     static SoundHelper()
@@ -28,7 +34,7 @@ namespace AwesomePokerGameSln.Code
     {
 
       bgSoundPlayer = new SoundPlayer();
-      //effectSoundPlayer = new SoundPlayer();
+      effectSoundPlayer = new SoundPlayer();
       initBgMusic();
       muted = false;
 
@@ -61,6 +67,22 @@ namespace AwesomePokerGameSln.Code
       playBgMusic();
     }
 
+    public void playSoundEffect(sound_effects effect)
+    {
+      //stop any effects that are currently playing
+      effectSoundPlayer.Stop();
+      if (!muted)
+      {
+        //if we are playing the shuffle sound
+        if (effect == sound_effects.shuffle)
+        {
+          //set the stream then play it
+          System.IO.Stream str = Properties.Resources.shuffling_cards_1;
+          effectSoundPlayer.Stream = str;
+          effectSoundPlayer.Play();
+        }
+      }
+    }
 
     /// <summary>
     /// Plays the background music on a loop if not currently muted.
@@ -82,6 +104,11 @@ namespace AwesomePokerGameSln.Code
       bgSoundPlayer.Stop();
     }
 
+    public void stopSoundEffect()
+    {
+      effectSoundPlayer.Stop();
+    }
+
     /// <summary>
     /// If muted, mutes all sounds dispatched through the sound helper. Otherwise, it unmutes and restarts the background music
     /// </summary>
@@ -93,6 +120,7 @@ namespace AwesomePokerGameSln.Code
       if (muted)
       {
         stopBgMusic();
+        stopSoundEffect();
       }
       else
       {
