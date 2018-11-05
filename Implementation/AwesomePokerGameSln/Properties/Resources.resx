@@ -6998,4 +6998,7 @@
   <data name="background_music" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background_music.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="shuffling_cards_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shuffling-cards-1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

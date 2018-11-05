@@ -42,7 +42,7 @@ namespace AwesomePokerGameSln.Code {
                     default: faceName = ""; break;
                 }
             }
-
+            
             return Resources.ResourceManager.GetObject(faceName + "_of_" + suitName) as Bitmap;
         }
 

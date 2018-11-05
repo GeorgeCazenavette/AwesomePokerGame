@@ -154,7 +154,9 @@ namespace AwesomePokerGameSln {
     /// </summary>
     private void redealButtonClick()
     {
+      //SoundHelper.GetInstance().playSoundEffect(SoundHelper.sound_effects.shuffle);
       dealCards();
+
     }
 
     private void revealButtonClick()
