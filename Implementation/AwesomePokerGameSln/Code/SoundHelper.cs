@@ -9,21 +9,47 @@ namespace AwesomePokerGameSln.Code
 {
   public class SoundHelper
   {
+    //singleton
+    private static SoundHelper instance = null;
     private SoundPlayer bgSoundPlayer;
     private bool muted;
     //private SoundPlayer effectSoundPlayer;
+
+    //singleton lazy initialization
+    static SoundHelper()
+    {
+      instance = new SoundHelper();
+    }
 
     /// <summary>
     /// Creates a new sound helper and starts playing the background music
     /// </summary>
     public SoundHelper()
     {
+
       bgSoundPlayer = new SoundPlayer();
       //effectSoundPlayer = new SoundPlayer();
       initBgMusic();
       muted = false;
 
     }
+
+    /// <summary>
+    /// Returns the singleton instance
+    /// </summary>
+    public static SoundHelper GetInstance()
+    {
+      return instance;
+    }
+
+    /// <summary>
+    /// Clears the singleton instance
+    /// </summary>
+    public static void ClearInstance()
+    {
+      instance = null;
+    }
+
 
     /// <summary>
     /// Creates a SoundPlayer for the Background Music then plays the background music

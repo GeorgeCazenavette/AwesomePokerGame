@@ -5,11 +5,13 @@ using System.Windows.Forms;
 
 namespace AwesomePokerGameSln {
   public partial class FrmTitle : Form {
-    public SoundHelper Sound_Helper;
+    //first initialization of the singleton so it actually creates it
+    public SoundHelper Sound_Helper = new SoundHelper();
 
     public FrmTitle() {
       InitializeComponent();
-      Sound_Helper = new SoundHelper();
+      //Sound_Helper = new SoundHelper();
+      
     }
 
     private void btnQuit_Click(object sender, EventArgs e) {
@@ -46,7 +48,8 @@ namespace AwesomePokerGameSln {
       //M stands for mute
       if (e.KeyCode == Keys.M)
       {
-        Sound_Helper.mute_unmute();
+        //get the singleton for soundhelper then mute or unmute it
+        SoundHelper.GetInstance().mute_unmute();
       }
     }
 

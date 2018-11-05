@@ -23,6 +23,8 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      //Make it process all key events
+      this.KeyPreview = true;
       this.picCard1 = new System.Windows.Forms.PictureBox();
       this.picCard3 = new System.Windows.Forms.PictureBox();
       this.picCard4 = new System.Windows.Forms.PictureBox();
@@ -219,6 +221,7 @@
       this.Text = "FrmPlaygame";
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPlaygame_FormClosed);
       this.Load += new System.EventHandler(this.FrmPlaygame_Load);
+      this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmPlaygame_KeyDown);
       ((System.ComponentModel.ISupportInitialize)(this.picCard1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard3)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard4)).EndInit();

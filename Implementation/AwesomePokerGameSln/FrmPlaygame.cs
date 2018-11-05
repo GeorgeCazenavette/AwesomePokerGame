@@ -28,6 +28,7 @@ namespace AwesomePokerGameSln {
     public FrmPlaygame() {
       InitializeComponent();
 
+      //SoundHelper.GetInstance().stopBgMusic();
       //InitializeBackgroundMusic();
       
       deck = new Deck();
@@ -239,7 +240,17 @@ namespace AwesomePokerGameSln {
           return base.ProcessCmdKey(ref msg, keyData);
       }
     }
-
+    /// <summary>
+    /// Handles KeyDown Events within FrmPlayGame
+    /// </summary>
+    private void FrmPlaygame_KeyDown(object sender, KeyEventArgs e)
+    {
+      //M stands for mute
+      if (e.KeyCode == Keys.M)
+      {
+        SoundHelper.GetInstance().mute_unmute();
+      }
+    }
   }
 
 

@@ -23,7 +23,7 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-      //Make is process all key events
+      //Make it process all key events
       this.KeyPreview = true;
       this.label1 = new System.Windows.Forms.Label();
       this.btnNewGame = new System.Windows.Forms.Button();
