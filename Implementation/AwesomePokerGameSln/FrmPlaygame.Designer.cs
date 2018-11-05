@@ -23,8 +23,6 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-      //Make it process all key events
-      this.KeyPreview = true;
       this.picCard1 = new System.Windows.Forms.PictureBox();
       this.picCard3 = new System.Windows.Forms.PictureBox();
       this.picCard4 = new System.Windows.Forms.PictureBox();
@@ -40,6 +38,7 @@
       this.button2 = new System.Windows.Forms.Button();
       this.button3 = new System.Windows.Forms.Button();
       this.dealerHandLabel = new System.Windows.Forms.Label();
+      this.phaseLabel = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.picCard1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard3)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard4)).BeginInit();
@@ -55,7 +54,7 @@
       // picCard1
       // 
       this.picCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.picCard1.Location = new System.Drawing.Point(76, 183);
+      this.picCard1.Location = new System.Drawing.Point(76, 326);
       this.picCard1.Name = "picCard1";
       this.picCard1.Size = new System.Drawing.Size(100, 145);
       this.picCard1.TabIndex = 0;
@@ -65,7 +64,7 @@
       // picCard3
       // 
       this.picCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.picCard3.Location = new System.Drawing.Point(345, 183);
+      this.picCard3.Location = new System.Drawing.Point(345, 326);
       this.picCard3.Name = "picCard3";
       this.picCard3.Size = new System.Drawing.Size(100, 145);
       this.picCard3.TabIndex = 1;
@@ -75,7 +74,7 @@
       // picCard4
       // 
       this.picCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.picCard4.Location = new System.Drawing.Point(480, 183);
+      this.picCard4.Location = new System.Drawing.Point(480, 326);
       this.picCard4.Name = "picCard4";
       this.picCard4.Size = new System.Drawing.Size(100, 145);
       this.picCard4.TabIndex = 2;
@@ -85,7 +84,7 @@
       // picCard5
       // 
       this.picCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.picCard5.Location = new System.Drawing.Point(619, 183);
+      this.picCard5.Location = new System.Drawing.Point(619, 326);
       this.picCard5.Name = "picCard5";
       this.picCard5.Size = new System.Drawing.Size(100, 145);
       this.picCard5.TabIndex = 3;
@@ -95,7 +94,7 @@
       // picCard2
       // 
       this.picCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.picCard2.Location = new System.Drawing.Point(211, 183);
+      this.picCard2.Location = new System.Drawing.Point(211, 326);
       this.picCard2.Name = "picCard2";
       this.picCard2.Size = new System.Drawing.Size(100, 145);
       this.picCard2.TabIndex = 4;
@@ -104,7 +103,7 @@
       // 
       // button1
       // 
-      this.button1.Location = new System.Drawing.Point(233, 345);
+      this.button1.Location = new System.Drawing.Point(233, 488);
       this.button1.Name = "button1";
       this.button1.Size = new System.Drawing.Size(179, 86);
       this.button1.TabIndex = 6;
@@ -116,7 +115,7 @@
       // 
       this.lblHandType.AutoSize = true;
       this.lblHandType.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblHandType.Location = new System.Drawing.Point(725, 246);
+      this.lblHandType.Location = new System.Drawing.Point(725, 389);
       this.lblHandType.Name = "lblHandType";
       this.lblHandType.Size = new System.Drawing.Size(99, 33);
       this.lblHandType.TabIndex = 7;
@@ -125,7 +124,7 @@
       // pictureBox1
       // 
       this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.pictureBox1.Location = new System.Drawing.Point(211, 12);
+      this.pictureBox1.Location = new System.Drawing.Point(211, 155);
       this.pictureBox1.Name = "pictureBox1";
       this.pictureBox1.Size = new System.Drawing.Size(100, 145);
       this.pictureBox1.TabIndex = 12;
@@ -134,7 +133,7 @@
       // pictureBox2
       // 
       this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.pictureBox2.Location = new System.Drawing.Point(619, 12);
+      this.pictureBox2.Location = new System.Drawing.Point(619, 155);
       this.pictureBox2.Name = "pictureBox2";
       this.pictureBox2.Size = new System.Drawing.Size(100, 145);
       this.pictureBox2.TabIndex = 11;
@@ -143,7 +142,7 @@
       // pictureBox3
       // 
       this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.pictureBox3.Location = new System.Drawing.Point(480, 12);
+      this.pictureBox3.Location = new System.Drawing.Point(480, 155);
       this.pictureBox3.Name = "pictureBox3";
       this.pictureBox3.Size = new System.Drawing.Size(100, 145);
       this.pictureBox3.TabIndex = 10;
@@ -152,7 +151,7 @@
       // pictureBox4
       // 
       this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.pictureBox4.Location = new System.Drawing.Point(345, 12);
+      this.pictureBox4.Location = new System.Drawing.Point(345, 155);
       this.pictureBox4.Name = "pictureBox4";
       this.pictureBox4.Size = new System.Drawing.Size(100, 145);
       this.pictureBox4.TabIndex = 9;
@@ -161,7 +160,7 @@
       // pictureBox5
       // 
       this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.pictureBox5.Location = new System.Drawing.Point(76, 12);
+      this.pictureBox5.Location = new System.Drawing.Point(76, 155);
       this.pictureBox5.Name = "pictureBox5";
       this.pictureBox5.Size = new System.Drawing.Size(100, 145);
       this.pictureBox5.TabIndex = 8;
@@ -169,7 +168,7 @@
       // 
       // button2
       // 
-      this.button2.Location = new System.Drawing.Point(24, 345);
+      this.button2.Location = new System.Drawing.Point(24, 488);
       this.button2.Name = "button2";
       this.button2.Size = new System.Drawing.Size(164, 86);
       this.button2.TabIndex = 13;
@@ -179,7 +178,7 @@
       // 
       // button3
       // 
-      this.button3.Location = new System.Drawing.Point(463, 345);
+      this.button3.Location = new System.Drawing.Point(463, 488);
       this.button3.Name = "button3";
       this.button3.Size = new System.Drawing.Size(156, 86);
       this.button3.TabIndex = 14;
@@ -191,17 +190,29 @@
       // 
       this.dealerHandLabel.AutoSize = true;
       this.dealerHandLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.dealerHandLabel.Location = new System.Drawing.Point(725, 73);
+      this.dealerHandLabel.Location = new System.Drawing.Point(725, 216);
       this.dealerHandLabel.Name = "dealerHandLabel";
       this.dealerHandLabel.Size = new System.Drawing.Size(99, 33);
       this.dealerHandLabel.TabIndex = 15;
       this.dealerHandLabel.Text = "label2";
+      this.dealerHandLabel.Click += new System.EventHandler(this.dealerHandLabel_Click);
+      // 
+      // phaseLabel
+      // 
+      this.phaseLabel.AutoSize = true;
+      this.phaseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.phaseLabel.Location = new System.Drawing.Point(346, 40);
+      this.phaseLabel.Name = "phaseLabel";
+      this.phaseLabel.Size = new System.Drawing.Size(99, 33);
+      this.phaseLabel.TabIndex = 16;
+      this.phaseLabel.Text = "phase";
       // 
       // FrmPlaygame
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1023, 450);
+      this.ClientSize = new System.Drawing.Size(1023, 731);
+      this.Controls.Add(this.phaseLabel);
       this.Controls.Add(this.dealerHandLabel);
       this.Controls.Add(this.button3);
       this.Controls.Add(this.button2);
@@ -217,6 +228,7 @@
       this.Controls.Add(this.picCard4);
       this.Controls.Add(this.picCard3);
       this.Controls.Add(this.picCard1);
+      this.KeyPreview = true;
       this.Name = "FrmPlaygame";
       this.Text = "FrmPlaygame";
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPlaygame_FormClosed);
@@ -254,5 +266,6 @@
         private System.Windows.Forms.Button button2;
     private System.Windows.Forms.Button button3;
     private System.Windows.Forms.Label dealerHandLabel;
+    private System.Windows.Forms.Label phaseLabel;
   }
 }

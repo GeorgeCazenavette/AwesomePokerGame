@@ -251,6 +251,11 @@ namespace AwesomePokerGameSln {
         SoundHelper.GetInstance().mute_unmute();
       }
     }
+
+    private void dealerHandLabel_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 
 
