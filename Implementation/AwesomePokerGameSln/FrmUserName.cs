@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace AwesomePokerGameSln
 {
     public partial class FrmUserName : Form
@@ -23,41 +24,42 @@ namespace AwesomePokerGameSln
 
         }
 
-        private void userNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void emailBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void logonBtn_Click(object sender, EventArgs e)
         {
-            FrmTitle frmTitle = new FrmTitle();
-            frmTitle.Show();
-            Hide();
-        }
-
-        private void newUserBtn_Click(object sender, EventArgs e)
-        {
-            if(emailLabel.Visible != true)
+            string userName, email;
+            userName = userNameTextBox.Text;
+            email = emailBox.Text;
+            if(userName == "" || email == "")
             {
-            emailLabel.Visible = true;
-            emailBox.Visible = true;
+                MessageBox.Show("please enter a username and email");
+            }
+            else if(email.Contains('@') != true)
+            {
+                MessageBox.Show("please enter a valid email");
+            }
+            else
+            {
+                // Use Dictionary as a map.
+                var userNameMap = new Dictionary<string, string>();
+
+                // ... Add some keys and values.
+                userNameMap.Add(userName, email);
+
+                // ... Loop over the map.
+                foreach (var pair in userNameMap)
+                {
+                    string key = pair.Key;
+                    string value = pair.Value;
+                    Console.WriteLine(key + "/" + value);
+                }
+
+                FrmTitle frmTitle = new FrmTitle(userName);
+                frmTitle.Show();
+                Hide();
+
             }
 
         }
 
-        private void emailLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

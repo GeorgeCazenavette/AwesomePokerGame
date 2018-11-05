@@ -31,6 +31,7 @@
             this.picRulebook = new System.Windows.Forms.PictureBox();
             this.gamblingHelpLbl = new System.Windows.Forms.Label();
             this.buttonSettings = new System.Windows.Forms.Button();
+            this.userNameTitleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picRulebook)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,9 +41,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(84, -56);
+            this.label1.Location = new System.Drawing.Point(112, -69);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(662, 153);
+            this.label1.Size = new System.Drawing.Size(821, 189);
             this.label1.TabIndex = 0;
             this.label1.Text = "Awesome";
             // 
@@ -88,9 +90,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(31, 167);
+            this.label2.Location = new System.Drawing.Point(41, 206);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(435, 153);
+            this.label2.Size = new System.Drawing.Size(539, 189);
             this.label2.TabIndex = 4;
             this.label2.Text = "Game";
             // 
@@ -98,9 +101,10 @@
             // 
             this.picRulebook.BackgroundImage = global::AwesomePokerGameSln.Properties.Resources.rule_book;
             this.picRulebook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picRulebook.Location = new System.Drawing.Point(220, 75);
+            this.picRulebook.Location = new System.Drawing.Point(293, 92);
+            this.picRulebook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picRulebook.Name = "picRulebook";
-            this.picRulebook.Size = new System.Drawing.Size(505, 311);
+            this.picRulebook.Size = new System.Drawing.Size(673, 383);
             this.picRulebook.TabIndex = 5;
             this.picRulebook.TabStop = false;
             this.picRulebook.Visible = false;
@@ -112,9 +116,10 @@
             this.gamblingHelpLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gamblingHelpLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.gamblingHelpLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.gamblingHelpLbl.Location = new System.Drawing.Point(527, 534);
+            this.gamblingHelpLbl.Location = new System.Drawing.Point(703, 657);
+            this.gamblingHelpLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gamblingHelpLbl.Name = "gamblingHelpLbl";
-            this.gamblingHelpLbl.Size = new System.Drawing.Size(411, 17);
+            this.gamblingHelpLbl.Size = new System.Drawing.Size(491, 20);
             this.gamblingHelpLbl.TabIndex = 6;
             this.gamblingHelpLbl.Text = "Gambling Addition? Click or call 1-800-GAMBLER for more help.";
             this.gamblingHelpLbl.Click += new System.EventHandler(this.label3_Click);
@@ -130,10 +135,20 @@
             this.buttonSettings.Text = "Settings";
             this.buttonSettings.UseVisualStyleBackColor = false;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
+            // userNameTitleLabel
+            // 
+            this.userNameTitleLabel.AutoSize = true;
+            this.userNameTitleLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.userNameTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.userNameTitleLabel.Location = new System.Drawing.Point(1032, 29);
+            this.userNameTitleLabel.Name = "userNameTitleLabel";
+            this.userNameTitleLabel.Size = new System.Drawing.Size(103, 39);
+            this.userNameTitleLabel.TabIndex = 7;
+            this.userNameTitleLabel.Text = "Blank";
             // 
             // FrmTitle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImage = global::AwesomePokerGameSln.Properties.Resources.title_screen;
@@ -166,7 +181,11 @@
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.PictureBox picRulebook;
         private System.Windows.Forms.Label gamblingHelpLbl;
+
         private System.Windows.Forms.Button buttonSettings;
+
+        private System.Windows.Forms.Label userNameTitleLabel;
+
     }
 }
 

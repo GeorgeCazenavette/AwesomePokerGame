@@ -33,8 +33,6 @@
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.emailBox = new System.Windows.Forms.TextBox();
             this.logonBtn = new System.Windows.Forms.Button();
-            this.newUserBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // emailLabel
@@ -46,8 +44,6 @@
             this.emailLabel.Size = new System.Drawing.Size(85, 29);
             this.emailLabel.TabIndex = 1;
             this.emailLabel.Text = "Email:";
-            this.emailLabel.Visible = false;
-            this.emailLabel.Click += new System.EventHandler(this.emailLabel_Click);
             // 
             // userNameLabel
             // 
@@ -58,7 +54,6 @@
             this.userNameLabel.Size = new System.Drawing.Size(148, 29);
             this.userNameLabel.TabIndex = 2;
             this.userNameLabel.Text = "User Name:";
-            this.userNameLabel.Click += new System.EventHandler(this.userNameLabel_Click);
             // 
             // userNameTextBox
             // 
@@ -67,7 +62,6 @@
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(268, 36);
             this.userNameTextBox.TabIndex = 3;
-            this.userNameTextBox.TextChanged += new System.EventHandler(this.userNameTextBox_TextChanged);
             // 
             // emailBox
             // 
@@ -76,8 +70,6 @@
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(268, 36);
             this.emailBox.TabIndex = 4;
-            this.emailBox.Visible = false;
-            this.emailBox.TextChanged += new System.EventHandler(this.emailBox_TextChanged);
             // 
             // logonBtn
             // 
@@ -91,43 +83,19 @@
             this.logonBtn.UseVisualStyleBackColor = false;
             this.logonBtn.Click += new System.EventHandler(this.logonBtn_Click);
             // 
-            // newUserBtn
-            // 
-            this.newUserBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.newUserBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.newUserBtn.Location = new System.Drawing.Point(541, 142);
-            this.newUserBtn.Name = "newUserBtn";
-            this.newUserBtn.Size = new System.Drawing.Size(144, 56);
-            this.newUserBtn.TabIndex = 6;
-            this.newUserBtn.Text = "New User";
-            this.newUserBtn.UseVisualStyleBackColor = false;
-            this.newUserBtn.Click += new System.EventHandler(this.newUserBtn_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(224, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(369, 37);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "click logon to continue!!!!";
-            // 
             // FrmUserName
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.newUserBtn);
             this.Controls.Add(this.logonBtn);
             this.Controls.Add(this.emailBox);
             this.Controls.Add(this.userNameTextBox);
             this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.emailLabel);
             this.Name = "FrmUserName";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logon";
             this.Load += new System.EventHandler(this.FrmUserName_Load);
             this.ResumeLayout(false);
@@ -141,7 +109,5 @@
         private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.TextBox emailBox;
         private System.Windows.Forms.Button logonBtn;
-        private System.Windows.Forms.Button newUserBtn;
-        private System.Windows.Forms.Label label1;
     }
 }
