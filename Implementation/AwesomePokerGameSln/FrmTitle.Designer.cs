@@ -30,6 +30,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.picRulebook = new System.Windows.Forms.PictureBox();
             this.gamblingHelpLbl = new System.Windows.Forms.Label();
+            this.buttonSettings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picRulebook)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,9 +50,9 @@
             // 
             this.btnNewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewGame.Location = new System.Drawing.Point(48, 430);
+            this.btnNewGame.Location = new System.Drawing.Point(14, 431);
             this.btnNewGame.Name = "btnNewGame";
-            this.btnNewGame.Size = new System.Drawing.Size(211, 87);
+            this.btnNewGame.Size = new System.Drawing.Size(200, 87);
             this.btnNewGame.TabIndex = 1;
             this.btnNewGame.Text = "New Game";
             this.btnNewGame.UseVisualStyleBackColor = false;
@@ -61,9 +62,9 @@
             // 
             this.btnViewRuleBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnViewRuleBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewRuleBook.Location = new System.Drawing.Point(365, 430);
+            this.btnViewRuleBook.Location = new System.Drawing.Point(232, 431);
             this.btnViewRuleBook.Name = "btnViewRuleBook";
-            this.btnViewRuleBook.Size = new System.Drawing.Size(238, 87);
+            this.btnViewRuleBook.Size = new System.Drawing.Size(227, 87);
             this.btnViewRuleBook.TabIndex = 2;
             this.btnViewRuleBook.Text = "View Rule Book";
             this.btnViewRuleBook.UseVisualStyleBackColor = false;
@@ -73,9 +74,9 @@
             // 
             this.btnQuit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuit.Location = new System.Drawing.Point(704, 430);
+            this.btnQuit.Location = new System.Drawing.Point(730, 430);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(211, 87);
+            this.btnQuit.Size = new System.Drawing.Size(200, 87);
             this.btnQuit.TabIndex = 3;
             this.btnQuit.Text = "Quit Game";
             this.btnQuit.UseVisualStyleBackColor = false;
@@ -118,6 +119,18 @@
             this.gamblingHelpLbl.Text = "Gambling Addition? Click or call 1-800-GAMBLER for more help.";
             this.gamblingHelpLbl.Click += new System.EventHandler(this.label3_Click);
             // 
+            // buttonSettings
+            // 
+            this.buttonSettings.BackColor = System.Drawing.Color.Silver;
+            this.buttonSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSettings.Location = new System.Drawing.Point(476, 431);
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(227, 87);
+            this.buttonSettings.TabIndex = 7;
+            this.buttonSettings.Text = "Settings";
+            this.buttonSettings.UseVisualStyleBackColor = false;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
+            // 
             // FrmTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +139,7 @@
             this.BackgroundImage = global::AwesomePokerGameSln.Properties.Resources.title_screen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(950, 560);
+            this.Controls.Add(this.buttonSettings);
             this.Controls.Add(this.gamblingHelpLbl);
             this.Controls.Add(this.picRulebook);
             this.Controls.Add(this.label2);
@@ -133,8 +147,10 @@
             this.Controls.Add(this.btnViewRuleBook);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "FrmTitle";
             this.Text = "Awesome Poker Game";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmTitle_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.picRulebook)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -150,6 +166,7 @@
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.PictureBox picRulebook;
         private System.Windows.Forms.Label gamblingHelpLbl;
+        private System.Windows.Forms.Button buttonSettings;
     }
 }
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,10 @@ namespace AwesomePokerGameSln {
 
     public FrmPlaygame() {
       InitializeComponent();
+
+      //SoundHelper.GetInstance().stopBgMusic();
+      //InitializeBackgroundMusic();
+      
       deck = new Deck();
       playerCardPics = new PictureBox[5];
       for (int c = 1; c <= 5; c++) {
@@ -36,11 +41,21 @@ namespace AwesomePokerGameSln {
         dealerCardPics[c - 1] = this.Controls.Find("pictureBox" + c.ToString(), true)[0] as PictureBox;
       }
 
-      player = new Participant(playerCardPics, lblHandType, deck);
-      // replace "null" with handle for displaying dealer hand type
-      dealer = new Participant(dealerCardPics, null, deck);
+      player = new Participant(playerCardPics, lblHandType, deck, true);
+      dealer = new Participant(dealerCardPics, dealerHandLabel, deck, false);
     dealer.showHand = false;
     }
+
+
+    //private void InitializeBackgroundMusic()
+    //{
+    //  System.IO.Stream str = Properties.Resources.background_music;
+    //  System.Media.SoundPlayer sp = new System.Media.SoundPlayer(str);
+    //  ////we want the music to loop
+    //  ////sp.Play();
+    //  sp.PlayLooping();
+      
+    //}
 
 
 
@@ -50,9 +65,11 @@ namespace AwesomePokerGameSln {
     /// Resets mulligan button.
     /// </summary>
     private void dealCards() {
+      dealer.showHand = false;
       hasMulliganed = false;
       clearSelections();
       button2.Enabled = true;
+      button3.Enabled = true;
       deck.shuffleDeck();
       player.drawFreshHand();
       dealer.drawFreshHand();
@@ -137,7 +154,16 @@ namespace AwesomePokerGameSln {
     /// </summary>
     private void redealButtonClick()
     {
+      //SoundHelper.GetInstance().playSoundEffect(SoundHelper.sound_effects.shuffle);
       dealCards();
+
+    }
+
+    private void revealButtonClick()
+    {
+      button2.Enabled = false;
+      button3.Enabled = false;
+      dealer.showCards();
     }
 
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
@@ -164,6 +190,10 @@ namespace AwesomePokerGameSln {
       mulliganButtonClick();
     }
 
+    private void button3_Click(object sender, EventArgs e)
+    {
+      revealButtonClick();
+    }
 
     private void picCard5_Click(object sender, EventArgs e)
     {
@@ -211,6 +241,22 @@ namespace AwesomePokerGameSln {
         default:
           return base.ProcessCmdKey(ref msg, keyData);
       }
+    }
+    /// <summary>
+    /// Handles KeyDown Events within FrmPlayGame
+    /// </summary>
+    private void FrmPlaygame_KeyDown(object sender, KeyEventArgs e)
+    {
+      //M stands for mute
+      if (e.KeyCode == Keys.M)
+      {
+        SoundHelper.GetInstance().mute_unmute();
+      }
+    }
+
+    private void dealerHandLabel_Click(object sender, EventArgs e)
+    {
+
     }
   }
 

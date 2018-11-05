@@ -471,6 +471,15 @@ namespace AwesomePokerGameSln.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream background_music {
+            get {
+                return ResourceManager.GetStream("background_music", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap black_joker {
@@ -653,6 +662,16 @@ namespace AwesomePokerGameSln.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mute_small {
+            get {
+                object obj = ResourceManager.GetObject("mute_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap queen_of_clubs {
             get {
                 object obj = ResourceManager.GetObject("queen_of_clubs", resourceCulture);
@@ -741,11 +760,30 @@ namespace AwesomePokerGameSln.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream shuffling_cards_1 {
+            get {
+                return ResourceManager.GetStream("shuffling_cards_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap title_screen {
             get {
                 object obj = ResourceManager.GetObject("title_screen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unmute_small {
+            get {
+                object obj = ResourceManager.GetObject("unmute_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
