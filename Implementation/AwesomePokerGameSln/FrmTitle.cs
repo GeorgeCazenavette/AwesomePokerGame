@@ -53,6 +53,11 @@ namespace AwesomePokerGameSln {
       }
     }
 
-    
-  }
+        private void buttonSettings_Click(object sender, EventArgs e)
+        {
+            FrmSettings frmSettings = new FrmSettings(this);
+            frmSettings.Show();
+            Hide();
+        }
+    }
 }

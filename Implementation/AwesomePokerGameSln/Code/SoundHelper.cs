@@ -128,5 +128,13 @@ namespace AwesomePokerGameSln.Code
       }
     }
 
+    /// <summary>
+    /// Return true if the sound is muted
+    /// </summary>
+    public Boolean isMuted()
+    {
+      return muted;
+    }
+
   }
 }
