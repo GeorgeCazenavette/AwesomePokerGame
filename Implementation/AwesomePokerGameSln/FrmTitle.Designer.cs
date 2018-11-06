@@ -185,6 +185,7 @@
       this.KeyPreview = true;
       this.Name = "FrmTitle";
       this.Text = "Awesome Poker Game";
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTitle_Close);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmTitle_KeyDown);
       ((System.ComponentModel.ISupportInitialize)(this.picRulebook)).EndInit();
       this.ResumeLayout(false);

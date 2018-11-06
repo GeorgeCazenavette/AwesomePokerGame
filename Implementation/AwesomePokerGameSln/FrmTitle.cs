@@ -22,6 +22,7 @@ namespace AwesomePokerGameSln {
       Application.Exit();
     }
 
+
     private void btnViewRuleBook_Click(object sender, EventArgs e) {
       if (btnViewRuleBook.Text.StartsWith("View", true, null)) {
         picRulebook.Visible = true;
@@ -104,6 +105,10 @@ namespace AwesomePokerGameSln {
         }
     }
 
+    private void FormTitle_Close(object sender, FormClosedEventArgs e)
+    {
+      Application.Exit();
     }
+  }
 
 }
