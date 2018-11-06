@@ -164,6 +164,7 @@ namespace AwesomePokerGameSln {
       button2.Enabled = false;
       button3.Enabled = false;
       dealer.showCards();
+      getWin();
     }
 
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
@@ -257,6 +258,32 @@ namespace AwesomePokerGameSln {
     private void dealerHandLabel_Click(object sender, EventArgs e)
     {
 
+    }
+
+    /// <summary>
+    /// Determines if player wins or lose
+    /// </summary>
+    public void getWin()
+    {
+      int x = (int)player.hand.getHandType();
+      int y = (int)dealer.hand.getHandType();
+
+      // lower number is better rank
+      if (x < y)
+      {
+        //player wins
+        winnerLabel.Text = "You Win";
+      }
+      if (x == y)
+      {
+        // draw
+        winnerLabel.Text = "It's a tie";
+      }
+      if (x > y)
+      {
+        // player loses
+        winnerLabel.Text = "You Lose";
+      }
     }
   }
 
