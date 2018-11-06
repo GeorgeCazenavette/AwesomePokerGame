@@ -217,7 +217,7 @@
       this.winnerLabel.Name = "winnerLabel";
       this.winnerLabel.Size = new System.Drawing.Size(107, 33);
       this.winnerLabel.TabIndex = 16;
-      this.winnerLabel.Text = "winner";
+      this.winnerLabel.Text = "In Progress";
       //
       // button4
       //
