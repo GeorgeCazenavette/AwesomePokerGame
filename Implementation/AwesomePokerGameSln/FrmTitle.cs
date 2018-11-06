@@ -60,11 +60,6 @@ namespace AwesomePokerGameSln {
             frmSettings.Show();
             Hide();
         }
-
-        private void picRulebook_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }
