@@ -40,6 +40,7 @@
       this.dealerHandLabel = new System.Windows.Forms.Label();
       this.phaseLabel = new System.Windows.Forms.Label();
       this.winnerLabel = new System.Windows.Forms.Label();
+      this.button4 = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.picCard1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard3)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard4)).BeginInit();
@@ -217,12 +218,23 @@
       this.winnerLabel.Size = new System.Drawing.Size(107, 33);
       this.winnerLabel.TabIndex = 16;
       this.winnerLabel.Text = "winner";
+      //
+      // button4
+      //
+      this.button4.Location = new System.Drawing.Point(12, 12);
+      this.button4.Name = "button4";
+      this.button4.Size = new System.Drawing.Size(87, 28);
+      this.button4.TabIndex = 17;
+      this.button4.Text = "Main Menu";
+      this.button4.UseVisualStyleBackColor = true;
+      this.button4.Click += new System.EventHandler(this.button4_Click);
       // 
       // FrmPlaygame
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1026, 720);
+      this.Controls.Add(this.button4);
       this.Controls.Add(this.phaseLabel);
       this.Controls.Add(this.winnerLabel);
       this.Controls.Add(this.dealerHandLabel);
