@@ -24,10 +24,11 @@ namespace AwesomePokerGameSln {
     private bool hasMulliganed = false;
     private ArrayList cardsToMulligan = new ArrayList();
     private bool[] selectedCards = { false, false, false, false, false };
+    private string userName;
 
-    public FrmPlaygame() {
+    public FrmPlaygame( string username = null) {
       InitializeComponent();
-
+      userName = username;
       //SoundHelper.GetInstance().stopBgMusic();
       //InitializeBackgroundMusic();
       
@@ -257,6 +258,13 @@ namespace AwesomePokerGameSln {
     private void dealerHandLabel_Click(object sender, EventArgs e)
     {
 
+    }
+
+    private void button4_Click(object sender, EventArgs e)
+    {
+      FrmTitle frmTitle = new FrmTitle(userName);
+      frmTitle.Show();
+      Hide();
     }
   }
 

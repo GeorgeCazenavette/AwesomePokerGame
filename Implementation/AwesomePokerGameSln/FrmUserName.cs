@@ -13,6 +13,8 @@ namespace AwesomePokerGameSln
 {
     public partial class FrmUserName : Form
     {
+    static string userName;
+      
         public FrmUserName()
         {
             InitializeComponent();
@@ -26,7 +28,8 @@ namespace AwesomePokerGameSln
 
         private void logonBtn_Click(object sender, EventArgs e)
         {
-            string userName, email;
+            string email;
+            //string userName, email;
             userName = userNameTextBox.Text;
             email = emailBox.Text;
             if(userName == "" || email == "")

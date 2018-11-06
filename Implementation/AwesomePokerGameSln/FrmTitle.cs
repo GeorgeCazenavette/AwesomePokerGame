@@ -6,9 +6,13 @@ using System.Windows.Forms;
 namespace AwesomePokerGameSln {
   public partial class FrmTitle : Form {
     //first initialization of the singleton so it actually creates it
-    public SoundHelper Sound_Helper = new SoundHelper();
+    //public SoundHelper Sound_Helper = new SoundHelper();
+    private string userName;
 
-    public FrmTitle(string userName) {
+    public FrmTitle(string username = null) {
+      //initializes a new sound helper if this has been visited for the first time
+      SoundHelper.GetInstance();
+      userName = username;
       InitializeComponent();
       //Sound_Helper = new SoundHelper();
       userNameBoxTitle.Text = "Hi, " + userName;
@@ -30,7 +34,7 @@ namespace AwesomePokerGameSln {
     }
 
     private void btnNewGame_Click(object sender, EventArgs e) {
-      FrmPlaygame frmPlaygame = new FrmPlaygame();
+      FrmPlaygame frmPlaygame = new FrmPlaygame(userName);
       frmPlaygame.Show();
       Hide();
     }
