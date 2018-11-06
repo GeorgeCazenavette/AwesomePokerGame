@@ -213,8 +213,7 @@ namespace AwesomePokerGameSln {
     }
 
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
-      foreach (Form f in Application.OpenForms)
-        f.Close();
+      Application.Exit();
     }
 
     private void FrmPlaygame_Load(object sender, EventArgs e) {
