@@ -45,6 +45,8 @@ namespace AwesomePokerGameSln {
       }
 
       player = new Participant(playerCardPics, lblHandType, deck, true);
+      player.money = 500;
+      updateMoneyLabel();
       dealer = new Participant(dealerCardPics, dealerHandLabel, deck, false);
     dealer.showHand = false;
     }
@@ -164,10 +166,41 @@ namespace AwesomePokerGameSln {
 
     private void revealButtonClick()
     {
-      button2.Enabled = false;
-      button3.Enabled = false;
-      dealer.showCards();
-      getWin();
+      string bet = betTextBox.Text;
+      int betInt;
+      if (int.TryParse(bet, out betInt) && betInt >= 5 && betInt <= player.money)
+      {
+        button2.Enabled = false;
+        button3.Enabled = false;
+        dealer.showCards();
+        int result = getWin();
+        if (result == 1)
+        {
+          player.money += betInt;
+        }
+        else if (result == 0)
+        {
+          player.money += 0;
+        }
+        else
+        {
+          player.money -= betInt;
+          if (player.money < 0)
+          {
+            player.money = 0;
+          }
+        }
+        moneyLabel.Text = "Money: " + player.money;
+      }
+      else
+      {
+        MessageBox.Show("Please enter an integer between 5 and your current money in the \"Bet\" box.");
+      }
+    }
+
+    private void updateMoneyLabel()
+    {
+      moneyLabel.Text = "Money: " + player.money;
     }
 
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
@@ -273,7 +306,7 @@ namespace AwesomePokerGameSln {
     /// <summary>
     /// Determines if player wins or lose
     /// </summary>
-    public void getWin()
+    public int getWin()
     {
       int x = (int)player.hand.getHandType();
       int y = (int)dealer.hand.getHandType();
@@ -282,8 +315,9 @@ namespace AwesomePokerGameSln {
       if (x < y)
       {
         winnerLabel.Text = "You Win";
+        return 1;
       }
-      if (x == y)
+      else if (x == y)
       {
         winnerLabel.Text = "It's a tie";
 
@@ -294,11 +328,18 @@ namespace AwesomePokerGameSln {
         // straight: highest straight
         // flush: high card
         // full house: 3kind
+        return 0;
       }
-      if (x > y)
+      else //if (x > y)
       {
         winnerLabel.Text = "You Lose";
+        return -1;
       }
+    }
+
+    private void label2_Click(object sender, EventArgs e)
+    {
+
     }
   }
 

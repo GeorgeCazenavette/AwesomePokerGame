@@ -41,6 +41,9 @@
       this.phaseLabel = new System.Windows.Forms.Label();
       this.winnerLabel = new System.Windows.Forms.Label();
       this.button4 = new System.Windows.Forms.Button();
+      this.betTextBox = new System.Windows.Forms.TextBox();
+      this.label1 = new System.Windows.Forms.Label();
+      this.moneyLabel = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.picCard1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard3)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard4)).BeginInit();
@@ -215,12 +218,12 @@
       this.winnerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.winnerLabel.Location = new System.Drawing.Point(855, 301);
       this.winnerLabel.Name = "winnerLabel";
-      this.winnerLabel.Size = new System.Drawing.Size(107, 33);
+      this.winnerLabel.Size = new System.Drawing.Size(175, 33);
       this.winnerLabel.TabIndex = 16;
       this.winnerLabel.Text = "In Progress";
-      //
+      // 
       // button4
-      //
+      // 
       this.button4.Location = new System.Drawing.Point(12, 12);
       this.button4.Name = "button4";
       this.button4.Size = new System.Drawing.Size(87, 28);
@@ -229,11 +232,43 @@
       this.button4.UseVisualStyleBackColor = true;
       this.button4.Click += new System.EventHandler(this.button4_Click);
       // 
+      // betTextBox
+      // 
+      this.betTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.betTextBox.Location = new System.Drawing.Point(661, 530);
+      this.betTextBox.Name = "betTextBox";
+      this.betTextBox.Size = new System.Drawing.Size(80, 44);
+      this.betTextBox.TabIndex = 18;
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label1.Location = new System.Drawing.Point(655, 490);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(64, 37);
+      this.label1.TabIndex = 19;
+      this.label1.Text = "Bet";
+      // 
+      // moneyLabel
+      // 
+      this.moneyLabel.AutoSize = true;
+      this.moneyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.moneyLabel.Location = new System.Drawing.Point(760, 488);
+      this.moneyLabel.Name = "moneyLabel";
+      this.moneyLabel.Size = new System.Drawing.Size(120, 37);
+      this.moneyLabel.TabIndex = 20;
+      this.moneyLabel.Text = "Money:";
+      this.moneyLabel.Click += new System.EventHandler(this.label2_Click);
+      // 
       // FrmPlaygame
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1026, 720);
+      this.Controls.Add(this.moneyLabel);
+      this.Controls.Add(this.label1);
+      this.Controls.Add(this.betTextBox);
       this.Controls.Add(this.button4);
       this.Controls.Add(this.phaseLabel);
       this.Controls.Add(this.winnerLabel);
@@ -293,5 +328,8 @@
     private System.Windows.Forms.Label phaseLabel;
     private System.Windows.Forms.Label winnerLabel;
     private System.Windows.Forms.Button button4;
+    private System.Windows.Forms.TextBox betTextBox;
+    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.Label moneyLabel;
   }
 }
