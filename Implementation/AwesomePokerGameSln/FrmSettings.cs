@@ -23,6 +23,7 @@ namespace AwesomePokerGameSln
         public FrmSettings(FrmTitle returnTitleForm)
         {
             this.returnTitleForm = returnTitleForm;
+            this.BackColor = ThemeHelper.GetInstance().GetBackgroundColor();
             soundHelper = SoundHelper.GetInstance();
             InitializeComponent();
             setMuteImage();

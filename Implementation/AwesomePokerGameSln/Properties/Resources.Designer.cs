@@ -492,9 +492,39 @@ namespace AwesomePokerGameSln.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap card_back {
+        internal static System.Drawing.Bitmap card_back_blue {
             get {
-                object obj = ResourceManager.GetObject("card_back", resourceCulture);
+                object obj = ResourceManager.GetObject("card_back_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap card_back_orange {
+            get {
+                object obj = ResourceManager.GetObject("card_back_orange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap card_back_purple {
+            get {
+                object obj = ResourceManager.GetObject("card_back_purple", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap card_back_white {
+            get {
+                object obj = ResourceManager.GetObject("card_back_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\CardImageHelper.cs" />
+    <Compile Include="Code\ThemeHelper.cs" />
     <Compile Include="Code\Participant.cs" />
     <Compile Include="Code\SoundHelper.cs" />
     <Compile Include="FrmSettings.cs">
@@ -323,6 +324,10 @@
   <ItemGroup>
     <None Include="Resources\unmute-small.png" />
     <None Include="Resources\mute-small.png" />
+    <None Include="Resources\card_back_blue.png" />
+    <None Include="Resources\card_back_orange.png" />
+    <None Include="Resources\card_back_white.png" />
+    <None Include="Resources\card_back_purple.png" />
     <Content Include="Resources\shuffling-cards-1.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

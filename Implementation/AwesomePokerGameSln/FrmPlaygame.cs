@@ -28,6 +28,8 @@ namespace AwesomePokerGameSln {
 
     public FrmPlaygame( string username = null) {
       InitializeComponent();
+      this.BackColor = ThemeHelper.GetInstance().GetBackgroundColor();
+
       userName = username;
       //SoundHelper.GetInstance().stopBgMusic();
       //InitializeBackgroundMusic();

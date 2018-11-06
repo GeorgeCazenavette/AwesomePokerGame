@@ -48,7 +48,8 @@ namespace AwesomePokerGameSln.Code {
 
         public static Bitmap cardBackToBitmap()
         {
-            return Resources.ResourceManager.GetObject("card_back") as Bitmap;
+            String cardBackResourceName = ThemeHelper.GetInstance().GetCardBack();
+            return Resources.ResourceManager.GetObject(cardBackResourceName) as Bitmap;
         }
     }
 }
