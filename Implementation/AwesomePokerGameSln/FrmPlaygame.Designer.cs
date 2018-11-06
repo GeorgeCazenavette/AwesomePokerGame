@@ -38,7 +38,6 @@
       this.button2 = new System.Windows.Forms.Button();
       this.button3 = new System.Windows.Forms.Button();
       this.dealerHandLabel = new System.Windows.Forms.Label();
-      this.phaseLabel = new System.Windows.Forms.Label();
       this.winnerLabel = new System.Windows.Forms.Label();
       this.button4 = new System.Windows.Forms.Button();
       this.betTextBox = new System.Windows.Forms.TextBox();
@@ -202,16 +201,6 @@
       this.dealerHandLabel.Text = "label2";
       this.dealerHandLabel.Click += new System.EventHandler(this.dealerHandLabel_Click);
       // 
-      // phaseLabel
-      // 
-      this.phaseLabel.AutoSize = true;
-      this.phaseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.phaseLabel.Location = new System.Drawing.Point(346, 40);
-      this.phaseLabel.Name = "phaseLabel";
-      this.phaseLabel.Size = new System.Drawing.Size(99, 33);
-      this.phaseLabel.TabIndex = 16;
-      this.phaseLabel.Text = "phase";
-      // 
       // winnerLabel
       // 
       this.winnerLabel.AutoSize = true;
@@ -270,7 +259,6 @@
       this.Controls.Add(this.label1);
       this.Controls.Add(this.betTextBox);
       this.Controls.Add(this.button4);
-      this.Controls.Add(this.phaseLabel);
       this.Controls.Add(this.winnerLabel);
       this.Controls.Add(this.dealerHandLabel);
       this.Controls.Add(this.button3);
@@ -325,7 +313,6 @@
     private System.Windows.Forms.Button button2;
     private System.Windows.Forms.Button button3;
     private System.Windows.Forms.Label dealerHandLabel;
-    private System.Windows.Forms.Label phaseLabel;
     private System.Windows.Forms.Label winnerLabel;
     private System.Windows.Forms.Button button4;
     private System.Windows.Forms.TextBox betTextBox;
