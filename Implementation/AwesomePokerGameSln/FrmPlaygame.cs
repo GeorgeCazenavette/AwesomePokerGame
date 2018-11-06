@@ -191,11 +191,20 @@ namespace AwesomePokerGameSln {
           }
         }
         moneyLabel.Text = "Money: " + player.money;
+        if (player.money <= 5)
+        {
+          gameOver();
+        }
       }
       else
       {
         MessageBox.Show("Please enter an integer between 5 and your current money in the \"Bet\" box.");
       }
+    }
+
+    private void gameOver()
+    {
+      MessageBox.Show("You can no longer afford the minimum bet.\nPlease return to the main menu to begin a new game.");
     }
 
     private void updateMoneyLabel()
