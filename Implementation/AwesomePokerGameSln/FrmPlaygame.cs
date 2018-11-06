@@ -284,7 +284,20 @@ namespace AwesomePokerGameSln {
           redealButtonClick();
           return true;
 
-        default:
+        case (Keys.Shift | Keys.R):
+            button2.Enabled = false;
+            button3.Enabled = false;
+            dealer.showCards();
+            getWin();
+            return true;
+
+        case (Keys.Shift | Keys.Q):
+            FrmTitle frmTitle = new FrmTitle(userName);
+            frmTitle.Show();
+            Hide();
+            return true;
+
+                default:
           return base.ProcessCmdKey(ref msg, keyData);
       }
     }

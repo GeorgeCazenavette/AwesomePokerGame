@@ -134,5 +134,21 @@ namespace AwesomePokerGameSln
         {
             setTheme(ThemeHelper.Theme.WHITE);
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.Shift | Keys.R):
+                    returnTitleForm.Show();
+                    Hide();
+                    return true;
+
+                
+
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
     }
 }

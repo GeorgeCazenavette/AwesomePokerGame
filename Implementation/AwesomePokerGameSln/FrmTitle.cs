@@ -58,12 +58,52 @@ namespace AwesomePokerGameSln {
       }
     }
 
-        private void buttonSettings_Click(object sender, EventArgs e)
+    private void buttonSettings_Click(object sender, EventArgs e)
+    {
+        FrmSettings frmSettings = new FrmSettings(this);
+        frmSettings.Show();
+        Hide();
+    }
+
+
+    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+    {
+        switch (keyData)
         {
-            FrmSettings frmSettings = new FrmSettings(this);
-            frmSettings.Show();
-            Hide();
+            case (Keys.Shift | Keys.N):
+                FrmPlaygame frmPlaygame = new FrmPlaygame(userName);
+                frmPlaygame.Show();
+                Hide();
+                return true;
+
+            case (Keys.Shift | Keys.R):
+                if (btnViewRuleBook.Text.StartsWith("View", true, null))
+                {
+                    picRulebook.Visible = true;
+                    btnViewRuleBook.Text = "Close Rule Book";
+                }
+                else
+                {
+                    picRulebook.Visible = false;
+                    btnViewRuleBook.Text = "View Rule Book";
+                }
+                return true;
+
+            case (Keys.Shift | Keys.S):
+                FrmSettings frmSettings = new FrmSettings(this);
+                frmSettings.Show();
+                Hide();
+                return true;
+
+            case (Keys.Shift | Keys.Q):
+                Application.Exit();
+                return true;
+
+                default:
+                return base.ProcessCmdKey(ref msg, keyData);
         }
+    }
+
     }
 
 }
