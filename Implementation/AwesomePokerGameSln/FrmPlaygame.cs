@@ -45,6 +45,8 @@ namespace AwesomePokerGameSln {
       }
 
       player = new Participant(playerCardPics, lblHandType, deck, true);
+      player.money = 500;
+      updateMoneyLabel();
       dealer = new Participant(dealerCardPics, dealerHandLabel, deck, false);
     dealer.showHand = false;
     }
@@ -164,15 +166,54 @@ namespace AwesomePokerGameSln {
 
     private void revealButtonClick()
     {
-      button2.Enabled = false;
-      button3.Enabled = false;
-      dealer.showCards();
-      getWin();
+      string bet = betTextBox.Text;
+      int betInt;
+      if (int.TryParse(bet, out betInt) && betInt >= 5 && betInt <= player.money)
+      {
+        button2.Enabled = false;
+        button3.Enabled = false;
+        dealer.showCards();
+        int result = getWin();
+        if (result == 1)
+        {
+          player.money += betInt;
+        }
+        else if (result == 0)
+        {
+          player.money += 0;
+        }
+        else
+        {
+          player.money -= betInt;
+          if (player.money < 0)
+          {
+            player.money = 0;
+          }
+        }
+        moneyLabel.Text = "Money: " + player.money;
+        if (player.money <= 5)
+        {
+          gameOver();
+        }
+      }
+      else
+      {
+        MessageBox.Show("Please enter an integer between 5 and your current money in the \"Bet\" box.");
+      }
+    }
+
+    private void gameOver()
+    {
+      MessageBox.Show("You can no longer afford the minimum bet.\nPlease return to the main menu to begin a new game.");
+    }
+
+    private void updateMoneyLabel()
+    {
+      moneyLabel.Text = "Money: " + player.money;
     }
 
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
-      foreach (Form f in Application.OpenForms)
-        f.Close();
+      Application.Exit();
     }
 
     private void FrmPlaygame_Load(object sender, EventArgs e) {
@@ -242,7 +283,20 @@ namespace AwesomePokerGameSln {
           redealButtonClick();
           return true;
 
-        default:
+        case (Keys.Shift | Keys.R):
+            button2.Enabled = false;
+            button3.Enabled = false;
+            dealer.showCards();
+            getWin();
+            return true;
+
+        case (Keys.Shift | Keys.Q):
+            FrmTitle frmTitle = new FrmTitle(userName);
+            frmTitle.Show();
+            Hide();
+            return true;
+
+                default:
           return base.ProcessCmdKey(ref msg, keyData);
       }
     }
@@ -273,7 +327,7 @@ namespace AwesomePokerGameSln {
     /// <summary>
     /// Determines if player wins or lose
     /// </summary>
-    public void getWin()
+    public int getWin()
     {
       int x = (int)player.hand.getHandType();
       int y = (int)dealer.hand.getHandType();
@@ -282,8 +336,9 @@ namespace AwesomePokerGameSln {
       if (x < y)
       {
         winnerLabel.Text = "You Win";
+        return 1;
       }
-      if (x == y)
+      else if (x == y)
       {
         winnerLabel.Text = "It's a tie";
 
@@ -294,11 +349,18 @@ namespace AwesomePokerGameSln {
         // straight: highest straight
         // flush: high card
         // full house: 3kind
+        return 0;
       }
-      if (x > y)
+      else //if (x > y)
       {
         winnerLabel.Text = "You Lose";
+        return -1;
       }
+    }
+
+    private void label2_Click(object sender, EventArgs e)
+    {
+
     }
   }
 
