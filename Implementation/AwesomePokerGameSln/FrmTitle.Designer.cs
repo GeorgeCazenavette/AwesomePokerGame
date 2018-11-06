@@ -42,9 +42,10 @@
       this.label1.BackColor = System.Drawing.Color.Transparent;
       this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 90F, System.Drawing.FontStyle.Bold);
       this.label1.ForeColor = System.Drawing.Color.Yellow;
-      this.label1.Location = new System.Drawing.Point(-2, -38);
+      this.label1.Location = new System.Drawing.Point(-2, -31);
+      this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(736, 170);
+      this.label1.Size = new System.Drawing.Size(592, 135);
       this.label1.TabIndex = 0;
       this.label1.Text = "Awesome";
       // 
@@ -52,9 +53,10 @@
       // 
       this.btnNewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
       this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnNewGame.Location = new System.Drawing.Point(30, 497);
+      this.btnNewGame.Location = new System.Drawing.Point(22, 404);
+      this.btnNewGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnNewGame.Name = "btnNewGame";
-      this.btnNewGame.Size = new System.Drawing.Size(200, 107);
+      this.btnNewGame.Size = new System.Drawing.Size(150, 87);
       this.btnNewGame.TabIndex = 1;
       this.btnNewGame.Text = "New Game";
       this.btnNewGame.UseVisualStyleBackColor = false;
@@ -64,9 +66,10 @@
       // 
       this.btnViewRuleBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.btnViewRuleBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnViewRuleBook.Location = new System.Drawing.Point(270, 497);
+      this.btnViewRuleBook.Location = new System.Drawing.Point(202, 404);
+      this.btnViewRuleBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnViewRuleBook.Name = "btnViewRuleBook";
-      this.btnViewRuleBook.Size = new System.Drawing.Size(227, 107);
+      this.btnViewRuleBook.Size = new System.Drawing.Size(170, 87);
       this.btnViewRuleBook.TabIndex = 2;
       this.btnViewRuleBook.Text = "View Rule Book";
       this.btnViewRuleBook.UseVisualStyleBackColor = false;
@@ -76,9 +79,10 @@
       // 
       this.btnQuit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
       this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnQuit.Location = new System.Drawing.Point(812, 497);
+      this.btnQuit.Location = new System.Drawing.Point(609, 404);
+      this.btnQuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnQuit.Name = "btnQuit";
-      this.btnQuit.Size = new System.Drawing.Size(200, 107);
+      this.btnQuit.Size = new System.Drawing.Size(150, 87);
       this.btnQuit.TabIndex = 3;
       this.btnQuit.Text = "Quit Game";
       this.btnQuit.UseVisualStyleBackColor = false;
@@ -90,9 +94,10 @@
       this.label2.BackColor = System.Drawing.Color.Transparent;
       this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 90F, System.Drawing.FontStyle.Bold);
       this.label2.ForeColor = System.Drawing.Color.Yellow;
-      this.label2.Location = new System.Drawing.Point(30, 273);
+      this.label2.Location = new System.Drawing.Point(22, 222);
+      this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(484, 170);
+      this.label2.Size = new System.Drawing.Size(388, 135);
       this.label2.TabIndex = 4;
       this.label2.Text = "Game";
       // 
@@ -100,9 +105,10 @@
       // 
       this.picRulebook.BackgroundImage = global::AwesomePokerGameSln.Properties.Resources.rule_book;
       this.picRulebook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.picRulebook.Location = new System.Drawing.Point(245, 99);
+      this.picRulebook.Location = new System.Drawing.Point(184, 80);
+      this.picRulebook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.picRulebook.Name = "picRulebook";
-      this.picRulebook.Size = new System.Drawing.Size(563, 363);
+      this.picRulebook.Size = new System.Drawing.Size(422, 295);
       this.picRulebook.TabIndex = 5;
       this.picRulebook.TabStop = false;
       this.picRulebook.Visible = false;
@@ -114,9 +120,10 @@
       this.gamblingHelpLbl.Cursor = System.Windows.Forms.Cursors.Hand;
       this.gamblingHelpLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
       this.gamblingHelpLbl.ForeColor = System.Drawing.SystemColors.ScrollBar;
-      this.gamblingHelpLbl.Location = new System.Drawing.Point(521, 624);
+      this.gamblingHelpLbl.Location = new System.Drawing.Point(391, 507);
+      this.gamblingHelpLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
       this.gamblingHelpLbl.Name = "gamblingHelpLbl";
-      this.gamblingHelpLbl.Size = new System.Drawing.Size(491, 20);
+      this.gamblingHelpLbl.Size = new System.Drawing.Size(411, 17);
       this.gamblingHelpLbl.TabIndex = 6;
       this.gamblingHelpLbl.Text = "Gambling Addition? Click or call 1-800-GAMBLER for more help.";
       this.gamblingHelpLbl.Click += new System.EventHandler(this.label3_Click);
@@ -125,9 +132,10 @@
       // 
       this.buttonSettings.BackColor = System.Drawing.Color.Silver;
       this.buttonSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonSettings.Location = new System.Drawing.Point(542, 497);
+      this.buttonSettings.Location = new System.Drawing.Point(406, 404);
+      this.buttonSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.buttonSettings.Name = "buttonSettings";
-      this.buttonSettings.Size = new System.Drawing.Size(227, 107);
+      this.buttonSettings.Size = new System.Drawing.Size(170, 87);
       this.buttonSettings.TabIndex = 7;
       this.buttonSettings.Text = "Settings";
       this.buttonSettings.UseVisualStyleBackColor = false;
@@ -150,20 +158,21 @@
       this.userNameBoxTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
       this.userNameBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.userNameBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-      this.userNameBoxTitle.Location = new System.Drawing.Point(789, 58);
+      this.userNameBoxTitle.Location = new System.Drawing.Point(592, 47);
+      this.userNameBoxTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
       this.userNameBoxTitle.Name = "userNameBoxTitle";
-      this.userNameBoxTitle.Size = new System.Drawing.Size(92, 38);
+      this.userNameBoxTitle.Size = new System.Drawing.Size(75, 31);
       this.userNameBoxTitle.TabIndex = 8;
       this.userNameBoxTitle.Text = "Blank";
       // 
       // FrmTitle
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
       this.BackgroundImage = global::AwesomePokerGameSln.Properties.Resources.title_screen;
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.ClientSize = new System.Drawing.Size(1041, 653);
+      this.ClientSize = new System.Drawing.Size(831, 531);
       this.Controls.Add(this.userNameBoxTitle);
       this.Controls.Add(this.buttonSettings);
       this.Controls.Add(this.gamblingHelpLbl);
@@ -174,7 +183,6 @@
       this.Controls.Add(this.btnNewGame);
       this.Controls.Add(this.label1);
       this.KeyPreview = true;
-      this.Margin = new System.Windows.Forms.Padding(4);
       this.Name = "FrmTitle";
       this.Text = "Awesome Poker Game";
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmTitle_KeyDown);
