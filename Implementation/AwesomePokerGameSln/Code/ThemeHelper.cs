@@ -34,7 +34,7 @@ namespace AwesomePokerGameSln.Code
         public ThemeHelper()
         {
             // default theme
-            active_theme = Theme.BLUE;
+            active_theme = Theme.WHITE;
         }
 
         /// <summary>
@@ -99,9 +99,9 @@ namespace AwesomePokerGameSln.Code
                 case Theme.BLUE:
                     return Color.Aquamarine;
                 case Theme.ORANGE:
-                    return Color.OrangeRed;
+                    return Color.Orange;
                 case Theme.PURPLE:
-                    return Color.Magenta;
+                    return Color.Plum;
                 case Theme.WHITE:
                     return Color.White;
                 default:

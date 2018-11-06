@@ -27,6 +27,22 @@ namespace AwesomePokerGameSln
             soundHelper = SoundHelper.GetInstance();
             InitializeComponent();
             setMuteImage();
+
+            switch (ThemeHelper.GetInstance().GetTheme())
+            {
+                case ThemeHelper.Theme.BLUE:
+                    picBlueCard.BorderStyle = BorderStyle.Fixed3D;
+                    break;
+                case ThemeHelper.Theme.ORANGE:
+                    picOrangeCard.BorderStyle = BorderStyle.Fixed3D;
+                    break;
+                case ThemeHelper.Theme.PURPLE:
+                    picPurpleCard.BorderStyle = BorderStyle.Fixed3D;
+                    break;
+                case ThemeHelper.Theme.WHITE:
+                    picWhiteCard.BorderStyle = BorderStyle.Fixed3D;
+                    break;
+            }
         }
 
         private void buttonReturn_Click(object sender, EventArgs e)
@@ -70,6 +86,53 @@ namespace AwesomePokerGameSln
         private void FrmSettings_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void setTheme(ThemeHelper.Theme theme)
+        {
+            ThemeHelper.GetInstance().SetTheme(theme);
+            this.BackColor = ThemeHelper.GetInstance().GetBackgroundColor();
+
+            picBlueCard.BorderStyle = BorderStyle.None;
+            picWhiteCard.BorderStyle = BorderStyle.None;
+            picOrangeCard.BorderStyle = BorderStyle.None;
+            picPurpleCard.BorderStyle = BorderStyle.None;
+
+            switch (theme)
+            {
+                case ThemeHelper.Theme.BLUE:
+                    picBlueCard.BorderStyle = BorderStyle.Fixed3D;
+                    break;
+                case ThemeHelper.Theme.ORANGE:
+                    picOrangeCard.BorderStyle = BorderStyle.Fixed3D;
+                    break;
+                case ThemeHelper.Theme.PURPLE:
+                    picPurpleCard.BorderStyle = BorderStyle.Fixed3D;
+                    break;
+                case ThemeHelper.Theme.WHITE:
+                    picWhiteCard.BorderStyle = BorderStyle.Fixed3D;
+                    break;
+            }
+        }
+
+        private void picBlueCard_Click(object sender, EventArgs e)
+        {
+            setTheme(ThemeHelper.Theme.BLUE);
+        }
+
+        private void picOrangeCard_Click(object sender, EventArgs e)
+        {
+            setTheme(ThemeHelper.Theme.ORANGE);
+        }
+
+        private void picPurpleCard_Click(object sender, EventArgs e)
+        {
+            setTheme(ThemeHelper.Theme.PURPLE);
+        }
+
+        private void picWhiteCard_Click(object sender, EventArgs e)
+        {
+            setTheme(ThemeHelper.Theme.WHITE);
         }
     }
 }
