@@ -160,7 +160,6 @@ namespace AwesomePokerGameSln {
       //SoundHelper.GetInstance().playSoundEffect(SoundHelper.sound_effects.shuffle);
       dealCards();
       winnerLabel.Text = "In Progress";
-
     }
 
     private void revealButtonClick()
@@ -282,17 +281,22 @@ namespace AwesomePokerGameSln {
       // lower number is better rank
       if (x < y)
       {
-        //player wins
         winnerLabel.Text = "You Win";
       }
       if (x == y)
       {
-        // draw
         winnerLabel.Text = "It's a tie";
+
+        // high: highest card -> 2nd highest -> 3rd highest..
+        // pair: high card out of 3 distinct cards
+        // 2pair: highest pair -> second pair -> high card
+        // 3kind: highest 3kind -> highest card
+        // straight: highest straight
+        // flush: high card
+        // full house: 3kind
       }
       if (x > y)
       {
-        // player loses
         winnerLabel.Text = "You Lose";
       }
     }
