@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 
 namespace AwesomePokerGameSln
@@ -20,7 +21,6 @@ namespace AwesomePokerGameSln
             InitializeComponent();
         }
 
-
         private void FrmUserName_Load(object sender, EventArgs e)
         {
 
@@ -29,7 +29,6 @@ namespace AwesomePokerGameSln
         private void logonBtn_Click(object sender, EventArgs e)
         {
             string email;
-            //string userName, email;
             userName = userNameTextBox.Text;
             email = emailBox.Text;
             if(userName == "" || email == "")
@@ -42,27 +41,37 @@ namespace AwesomePokerGameSln
             }
             else
             {
-                // Use Dictionary as a map.
-                var userNameMap = new Dictionary<string, string>();
-
-                // ... Add some keys and values.
-                userNameMap.Add(userName, email);
-
-                // ... Loop over the map.
-                foreach (var pair in userNameMap)
-                {
-                    string key = pair.Key;
-                    string value = pair.Value;
-                    Console.WriteLine(key + "/" + value);
-                }
-
+                sendEmail(userName, email);
                 FrmTitle frmTitle = new FrmTitle(userName);
                 frmTitle.Show();
                 Hide();
-
             }
-
         }
 
+        private void sendEmail(string user, string email)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("AwesomePokerGameCyan@gmail.com");
+                mail.To.Add(email);
+
+                mail.Subject = "Awesome Poker Game";
+                string bodyText = "Welcome to Awesome Poker Game, ! Thanks for playing.\n\n Good luck!";
+                bodyText = bodyText.Insert(31, user);
+                mail.Body = bodyText;
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("AwesomePokerGameCyan@gmail.com", "drcherry");
+                SmtpServer.EnableSsl = true;
+                SmtpServer.Send(mail);
+            }
+            catch
+            {
+                MessageBox.Show("Could not send email");
+            }
+        }
     }
 }
