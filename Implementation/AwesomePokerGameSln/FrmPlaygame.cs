@@ -44,10 +44,11 @@ namespace AwesomePokerGameSln {
         dealerCardPics[c - 1] = this.Controls.Find("pictureBox" + c.ToString(), true)[0] as PictureBox;
       }
 
-      player = new Participant(playerCardPics, lblHandType, deck, true, 500);
-      dealer = new Participant(dealerCardPics, dealerHandLabel, deck, false, 500);
+      player = new Participant(playerCardPics, lblHandType, deck, true);
+      player.money = 500;
       updateMoneyLabel();
-      randDealerBet();
+      dealer = new Participant(dealerCardPics, dealerHandLabel, deck, false);
+      dealer.showHand = false;
     }
 
 
@@ -168,12 +169,6 @@ namespace AwesomePokerGameSln {
     {
       string bet = betTextBox.Text;
       int betInt;
-
-      string str = dealerBetLabel.Text;
-      string[] arr = str.Split(':');
-      int dealerBet;
-      Int32.TryParse(arr[1], out dealerBet);
-
       if (int.TryParse(bet, out betInt) && betInt >= 5 && betInt <= player.money)
       {
         button2.Enabled = false;
@@ -183,38 +178,25 @@ namespace AwesomePokerGameSln {
         int result = getWin();
         if (result == 1)
         {
-          player.money += dealerBet;
-          dealer.money -= dealerBet;
+          player.money += betInt;
         }
         else if (result == 0)
         {
-          player.money += ((betInt + dealerBet) / 2) - betInt;
-          dealer.money += ((betInt + dealerBet) / 2) - dealerBet;
+          player.money += 0;
         }
         else
         {
           player.money -= betInt;
-          dealer.money += betInt;
           if (player.money < 0)
           {
             player.money = 0;
           }
-          else if (dealer.money < 0)
-          {
-            dealer.money = 0;
-          }
         }
         moneyLabel.Text = "Money: " + player.money;
-        dealerMoneyLabel.Text = "Dealer Money: " + dealer.money;
         if (player.money <= 5)
         {
           gameOver();
         }
-        else if (dealer.money <= 5)
-        {
-          gameOverWin();
-        }
-
       }
       else
       {
@@ -229,25 +211,12 @@ namespace AwesomePokerGameSln {
       MessageBox.Show("You can no longer afford the minimum bet.\nPlease return to the main menu to begin a new game.");
       button1.Enabled = false;
     }
-    private void gameOverWin()
-    {
-      MessageBox.Show("Congratulations! You beat the dealer!\nPlease return to the main menu to begin a new game.");
-      button1.Enabled = false;
-    }
 
     private void updateMoneyLabel()
     {
       moneyLabel.Text = "Money: " + player.money;
-      dealerMoneyLabel.Text = "Dealer Money: " + dealer.money;
     }
-
-    public void randDealerBet()
-    {
-      Random rand = new Random();
-      int dealerBet = rand.Next(5, dealer.money);
-      dealerBetLabel.Text = "Dealer Bet: " + dealerBet;
-    }      
-
+   
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
       Application.Exit();
     }
@@ -258,7 +227,6 @@ namespace AwesomePokerGameSln {
 
     private void button1_Click(object sender, EventArgs e) {
       redealButtonClick();
-      randDealerBet();
     }
 
     /// <summary>
