@@ -153,16 +153,16 @@ namespace AwesomePokerGameSln {
         button2.Enabled = false;
       }
     }
-        
-    /// <summary>
-    /// Wrapper for pressing redeal button
-    /// </summary>
-    private void redealButtonClick()
-    {
-      //SoundHelper.GetInstance().playSoundEffect(SoundHelper.sound_effects.shuffle);
-      dealCards();
-      winnerLabel.Text = "Your Turn";
-    }
+
+        /// <summary>
+        /// Wrapper for pressing redeal button
+        /// </summary>
+        private void redealButtonClick()
+        {
+            //SoundHelper.GetInstance().playSoundEffect(SoundHelper.sound_effects.shuffle);
+            dealCards();
+            winnerLabel.Text = "Your Turn";
+        }
 
     private void revealButtonClick()
     {
@@ -195,12 +195,15 @@ namespace AwesomePokerGameSln {
         {
           gameOver();
         }
+
       }
       else
       {
         MessageBox.Show("Please enter an integer between 5 and your current money in the \"Bet\" box.");
       }
-    }
+
+            betTextBox.Text = 0.ToString();
+        }
 
     private void gameOver()
     {
@@ -366,9 +369,7 @@ namespace AwesomePokerGameSln {
     private void allin_Click(object sender, EventArgs e)
     {
 
+        betTextBox.Text = player.money.ToString();
     }
   }
-
-
-    
 }
