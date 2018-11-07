@@ -362,6 +362,11 @@ namespace AwesomePokerGameSln {
     {
 
     }
+
+    private void allin_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 
 

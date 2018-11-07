@@ -43,6 +43,7 @@
       this.betTextBox = new System.Windows.Forms.TextBox();
       this.label1 = new System.Windows.Forms.Label();
       this.moneyLabel = new System.Windows.Forms.Label();
+      this.AllInButton = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.picCard1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard3)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard4)).BeginInit();
@@ -107,9 +108,9 @@
       // 
       // button1
       // 
-      this.button1.Location = new System.Drawing.Point(233, 488);
+      this.button1.Location = new System.Drawing.Point(211, 488);
       this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(179, 86);
+      this.button1.Size = new System.Drawing.Size(100, 86);
       this.button1.TabIndex = 6;
       this.button1.Text = "Redeal";
       this.button1.UseVisualStyleBackColor = true;
@@ -172,9 +173,9 @@
       // 
       // button2
       // 
-      this.button2.Location = new System.Drawing.Point(24, 488);
+      this.button2.Location = new System.Drawing.Point(76, 488);
       this.button2.Name = "button2";
-      this.button2.Size = new System.Drawing.Size(164, 86);
+      this.button2.Size = new System.Drawing.Size(100, 86);
       this.button2.TabIndex = 13;
       this.button2.Text = "Mulligan";
       this.button2.UseVisualStyleBackColor = true;
@@ -182,9 +183,9 @@
       // 
       // button3
       // 
-      this.button3.Location = new System.Drawing.Point(463, 488);
+      this.button3.Location = new System.Drawing.Point(345, 490);
       this.button3.Name = "button3";
-      this.button3.Size = new System.Drawing.Size(156, 86);
+      this.button3.Size = new System.Drawing.Size(100, 86);
       this.button3.TabIndex = 14;
       this.button3.Text = "Reveal";
       this.button3.UseVisualStyleBackColor = true;
@@ -250,11 +251,22 @@
       this.moneyLabel.Text = "Money:";
       this.moneyLabel.Click += new System.EventHandler(this.label2_Click);
       // 
+      // AllInButton
+      // 
+      this.AllInButton.Location = new System.Drawing.Point(480, 490);
+      this.AllInButton.Name = "AllInButton";
+      this.AllInButton.Size = new System.Drawing.Size(100, 86);
+      this.AllInButton.TabIndex = 21;
+      this.AllInButton.Text = "All-In";
+      this.AllInButton.UseVisualStyleBackColor = true;
+      this.AllInButton.Click += new System.EventHandler(this.allin_Click);
+      // 
       // FrmPlaygame
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1026, 720);
+      this.Controls.Add(this.AllInButton);
       this.Controls.Add(this.moneyLabel);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.betTextBox);
@@ -318,5 +330,6 @@
     private System.Windows.Forms.TextBox betTextBox;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label moneyLabel;
+    private System.Windows.Forms.Button AllInButton;
   }
 }
