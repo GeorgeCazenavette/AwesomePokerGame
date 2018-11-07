@@ -109,6 +109,15 @@ namespace AwesomePokerGameSln.Code {
     }
 
     /// <summary>
+    /// Returns faces in a hand of a particpant
+    /// </summary>
+    public List<int> getFaces()
+    {
+      List<int> faces = cards.Select(card => card.Item1).ToList();
+      return faces;
+    }
+
+    /// <summary>
     /// Allows the exchanging changing of one card in the hand.
     /// </summary>
     /// <param name="index">index of card to swap</param>

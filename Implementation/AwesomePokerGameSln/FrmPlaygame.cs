@@ -366,33 +366,88 @@ namespace AwesomePokerGameSln {
     /// </summary>
     public int getWin()
     {
-      int x = (int)player.hand.getHandType();
-      int y = (int)dealer.hand.getHandType();
+      // converts enum HandType to interger
+      // lower number is better rank, i.e. Royal Flush = 0
+      int p = (int)player.hand.getHandType();
+      int d = (int)dealer.hand.getHandType();
+      List<int> phand = player.hand.getFaces();
+      List<int> dhand = dealer.hand.getFaces();
+      phand = phand.OrderBy(o => o).ToList();
+      dhand = dhand.OrderBy(o => o).ToList();
 
-      // lower number is better rank
-      if (x < y)
+      if (p < d)
       {
         winnerLabel.Text = "You Win";
         return 1;
       }
-      else if (x == y)
+      else if (p == d && p == 9) // high: highest card -> 2nd highest -> 3rd highest..
       {
-        winnerLabel.Text = "It's a tie";
+        return highCardBreaker(5, phand, dhand);
 
-        // high: highest card -> 2nd highest -> 3rd highest..
-        // pair: high card out of 3 distinct cards
+      }
+      else if (p == d && p == 8) // pair: higest pair -> high card out of 3 distinct cards
+      {
+        List<int> pDistinct= phand;
+        List<int> dDistinct= dhand;
+        List<int> pGroup = phand;
+        List<int> dGroup = dhand;
+        int pPair = pGroup.GroupBy(x => x).Where(group => group.Count() > 1).Select(group => group.Key).First();
+        int dPair = dGroup.GroupBy(x => x).Where(group => group.Count() > 1).Select(group => group.Key).First();
+        pDistinct.RemoveAll(item => item == pPair);
+        dDistinct.RemoveAll(item => item == dPair);
+
+        if (pPair > dPair)
+        {
+          winnerLabel.Text = "You Win";
+          return 1;
+        }
+        else if (pPair < dPair)
+        {
+          winnerLabel.Text = "You Lose";
+          return -1;
+        }
+        else
+        {
+          return highCardBreaker(3, pDistinct, dDistinct);
+        }
+      }
+
+      else if (p == d && p != 9 && p != 8)
+      {
         // 2pair: highest pair -> second pair -> high card
         // 3kind: highest 3kind -> highest card
         // straight: highest straight
         // flush: high card
         // full house: 3kind
+        winnerLabel.Text = "It's a tie";
         return 0;
       }
-      else //if (x > y)
+      else //if (p > d)
       {
         winnerLabel.Text = "You Lose";
         return -1;
       }
+
+    }
+
+    public int highCardBreaker(int numCards, List<int> phand, List<int> dhand)
+    {
+      for (int i = (numCards-1); i > 0; i--)
+      {
+        if (phand[i] > dhand[i])
+        {
+          winnerLabel.Text = "You Win";
+          return 1;
+        }
+        else if (phand[i] < dhand[i])
+        {
+          winnerLabel.Text = "You Lose";
+          return -1;
+        }
+
+      }
+      winnerLabel.Text = "It's a tie";
+      return 0;
     }
 
     private void label2_Click(object sender, EventArgs e)
