@@ -74,5 +74,37 @@ namespace AwesomePokerGameSln
             }
         }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.Enter):
+                    string email;
+                    userName = userNameTextBox.Text;
+                    email = emailBox.Text;
+                    if (userName == "" || email == "")
+                    {
+                        MessageBox.Show("please enter a username and email");
+                    }
+                    else if (email.Contains('@') != true)
+                    {
+                        MessageBox.Show("please enter a valid email");
+                    }
+                    else
+                    {
+                        sendEmail(userName, email);
+                        FrmTitle frmTitle = new FrmTitle(userName);
+                        frmTitle.Show();
+                        Hide();
+                    }
+                    return true;
+
+                
+
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
+
     }
 }
