@@ -206,11 +206,11 @@
       // 
       this.winnerLabel.AutoSize = true;
       this.winnerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.winnerLabel.Location = new System.Drawing.Point(855, 301);
+      this.winnerLabel.Location = new System.Drawing.Point(300, 90);
       this.winnerLabel.Name = "winnerLabel";
       this.winnerLabel.Size = new System.Drawing.Size(175, 33);
       this.winnerLabel.TabIndex = 16;
-      this.winnerLabel.Text = "In Progress";
+      this.winnerLabel.Text = "Your Turn";
       // 
       // button4
       // 
