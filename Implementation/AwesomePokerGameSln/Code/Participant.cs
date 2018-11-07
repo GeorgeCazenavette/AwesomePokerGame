@@ -28,13 +28,13 @@ namespace AwesomePokerGameSln
     public int money;
     public bool showHand = true;
 
-	public Participant(PictureBox[] pics, Label label, Deck d, bool show)
+	public Participant(PictureBox[] pics, Label label, Deck d, bool show, int mon)
 	{
       hand = new Hand(new Tuple<int, int>[5]);
       this.cardPics = pics;
       this.handLabel = label;
       this.deck = d;
-      this.money = 0;
+      this.money = mon;
       this.showHand = show;
     }
 

@@ -43,6 +43,8 @@
       this.betTextBox = new System.Windows.Forms.TextBox();
       this.label1 = new System.Windows.Forms.Label();
       this.moneyLabel = new System.Windows.Forms.Label();
+      this.dealerMoneyLabel = new System.Windows.Forms.Label();
+      this.dealerBetLabel = new System.Windows.Forms.Label();
       this.AllInButton = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.picCard1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picCard3)).BeginInit();
@@ -251,12 +253,34 @@
       this.moneyLabel.Text = "Money:";
       this.moneyLabel.Click += new System.EventHandler(this.label2_Click);
       // 
+      // dealerMoneyLabel
+      // 
+      this.dealerMoneyLabel.AutoSize = true;
+      this.dealerMoneyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.dealerMoneyLabel.Location = new System.Drawing.Point(660, 100);
+      this.dealerMoneyLabel.Name = "moneyLabel";
+      this.dealerMoneyLabel.Size = new System.Drawing.Size(120, 37);
+      this.dealerMoneyLabel.TabIndex = 21;
+      this.dealerMoneyLabel.Text = "Dealer Money:";
+      this.dealerMoneyLabel.Click += new System.EventHandler(this.label2_Click);
+      // 
+      // dealerBetLabel
+      // 
+      this.dealerBetLabel.AutoSize = true;
+      this.dealerBetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.dealerBetLabel.Location = new System.Drawing.Point(660, 50);
+      this.dealerBetLabel.Name = "betLabel";
+      this.dealerBetLabel.Size = new System.Drawing.Size(120, 37);
+      this.dealerBetLabel.TabIndex = 22;
+      this.dealerBetLabel.Text = "Dealer Bet:";
+      this.dealerBetLabel.Click += new System.EventHandler(this.label2_Click);
+      // 
       // AllInButton
       // 
       this.AllInButton.Location = new System.Drawing.Point(480, 490);
       this.AllInButton.Name = "AllInButton";
       this.AllInButton.Size = new System.Drawing.Size(100, 86);
-      this.AllInButton.TabIndex = 21;
+      this.AllInButton.TabIndex = 23;
       this.AllInButton.Text = "All-In";
       this.AllInButton.UseVisualStyleBackColor = true;
       this.AllInButton.Click += new System.EventHandler(this.allin_Click);
@@ -268,6 +292,8 @@
       this.ClientSize = new System.Drawing.Size(1026, 720);
       this.Controls.Add(this.AllInButton);
       this.Controls.Add(this.moneyLabel);
+      this.Controls.Add(this.dealerMoneyLabel);
+      this.Controls.Add(this.dealerBetLabel);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.betTextBox);
       this.Controls.Add(this.button4);
@@ -330,6 +356,8 @@
     private System.Windows.Forms.TextBox betTextBox;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label moneyLabel;
+    private System.Windows.Forms.Label dealerMoneyLabel;
+    private System.Windows.Forms.Label dealerBetLabel;
     private System.Windows.Forms.Button AllInButton;
   }
 }
