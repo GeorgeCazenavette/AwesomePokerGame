@@ -161,7 +161,7 @@ namespace AwesomePokerGameSln {
     {
       //SoundHelper.GetInstance().playSoundEffect(SoundHelper.sound_effects.shuffle);
       dealCards();
-      winnerLabel.Text = "In Progress";
+      winnerLabel.Text = "Your Turn";
     }
 
     private void revealButtonClick()
